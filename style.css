@@ -1,0 +1,151 @@
+/* Wicked Good Coffee: palette and mood come from the hanging sign.
+   Espresso, roasted wood, coffee cream, antique gold, iron.
+   Headlines: Libre Baskerville. Body: Lora. */
+
+:root {
+  --espresso: #2a1811;
+  --wood: #6b371f;
+  --wood-dark: #4f2917;
+  --cream: #f4e8d2;
+  --cream-deep: #eadcc0;
+  --gold: #b88746;
+  --iron: #1c1a18;
+  --head: "Libre Baskerville", Baskerville, "GFS Baskerville", Georgia, "Times New Roman", serif;
+  --body: "Lora", Georgia, "Times New Roman", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--espresso);
+  font-family: var(--body);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+a { color: var(--wood); text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: var(--espresso); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--wood); outline-offset: 3px; border-radius: 3px; }
+.on-dark a:focus-visible, .on-dark .btn:focus-visible { outline-color: var(--cream); }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--espresso); color: var(--cream); padding: 8px 14px; z-index: 10; }
+.skip:focus { left: 8px; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+h1, h2, h3 { font-family: var(--head); font-weight: 700; color: var(--espresso); }
+
+/* Header */
+.site-header { background: var(--espresso); color: var(--cream); }
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; padding-top: 14px; padding-bottom: 14px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: var(--cream); text-decoration: none; font-family: var(--head); font-weight: 700; font-size: 1.15rem; }
+.brand:hover { color: #fff; }
+.brand img { width: 34px; height: 34px; display: block; }
+.site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 24px; font-size: 1rem; }
+.site-nav a { color: var(--cream); text-decoration: none; padding: 4px 0; border-bottom: 2px solid transparent; }
+.site-nav a:hover { border-bottom-color: var(--gold); color: #fff; }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--gold); }
+.site-nav a:focus-visible { outline-color: var(--cream); }
+.site-header::after { content: ""; display: block; height: 3px; background: var(--gold); }
+
+/* Buttons */
+.btn { display: inline-block; font-family: var(--body); font-weight: 600; font-size: 1.05rem; line-height: 1.2; padding: 13px 24px; border-radius: 4px; text-decoration: none; background: var(--espresso); color: var(--cream); border: 2px solid var(--espresso); }
+.btn:hover { background: var(--wood); border-color: var(--wood); color: var(--cream); }
+.btn.quiet { background: transparent; color: var(--espresso); }
+.btn.quiet:hover { background: var(--espresso); border-color: var(--espresso); color: var(--cream); }
+.on-dark .btn { background: var(--cream); color: var(--espresso); border-color: var(--cream); }
+.on-dark .btn:hover { background: #fff; border-color: #fff; color: var(--espresso); }
+.site-nav .btn { padding: 8px 16px; font-size: 0.98rem; background: var(--cream); color: var(--espresso); border: 2px solid var(--cream); }
+.site-nav .btn:hover { background: #fff; border-color: #fff; color: var(--espresso); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.center .btn-row, .hero .btn-row { justify-content: center; }
+
+/* Hero: the sign is the logo, so it gets room */
+.hero { padding: 40px 0 56px; text-align: center; }
+.hero .sign { display: block; width: min(760px, 100%); height: auto; margin: 0 auto 28px; }
+.hero h1 { font-size: clamp(2.2rem, 5.6vw, 3.7rem); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 18px; }
+.hero p.lede { font-size: 1.28rem; line-height: 1.6; max-width: 36rem; margin: 0 auto; }
+
+/* Sections */
+.section { padding: 56px 0; border-top: 1px solid var(--gold); }
+.section h2 { font-size: clamp(1.6rem, 3.2vw, 2.1rem); line-height: 1.2; margin: 0 0 18px; }
+.section p { margin: 0 0 1em; max-width: 40rem; }
+
+.shelf { list-style: none; margin: 0; padding: 0; max-width: 46rem; }
+.shelf li { display: grid; grid-template-columns: 1fr auto; gap: 4px 24px; padding: 20px 0; border-top: 1px solid var(--cream-deep); }
+.shelf li:first-child { border-top: 0; padding-top: 4px; }
+.shelf h3 { font-size: 1.3rem; line-height: 1.25; margin: 0 0 4px; }
+.shelf p { margin: 0; max-width: 34rem; }
+.shelf .state { font-size: 0.95rem; font-weight: 600; color: var(--wood); white-space: nowrap; padding-top: 6px; }
+.shelf h3 a { color: var(--espresso); text-decoration-color: var(--gold); }
+.shelf h3 a:hover { color: var(--wood); }
+
+.guide-row { display: block; text-decoration: none; padding: 6px 0 2px; max-width: 44rem; color: var(--espresso); }
+.guide-row h3 { font-size: 1.55rem; line-height: 1.25; margin: 0 0 6px; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.guide-row:hover h3 { color: var(--wood); }
+.guide-row p { margin: 0; }
+.meta { font-size: 0.95rem; color: var(--wood); font-weight: 600; margin: 0 0 6px; }
+
+/* Plain-talk panel */
+.plain { background: var(--cream-deep); border-left: 6px solid var(--gold); padding: 26px 30px; max-width: 46rem; }
+.plain h2 { margin-top: 0; font-size: 1.5rem; }
+.plain p:last-child { margin-bottom: 0; }
+
+/* Newsletter band */
+.signup { background: var(--espresso); color: var(--cream); border-top: 3px solid var(--gold); padding: 56px 0; }
+.signup h2 { color: var(--cream); font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin: 0 0 14px; }
+.signup p { max-width: 36rem; margin: 0 0 1em; }
+.signup a:not(.btn) { color: var(--cream); }
+
+/* Article */
+.article { padding: 52px 0 28px; }
+.article header { margin-bottom: 28px; }
+.article h1 { font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.14; letter-spacing: -0.01em; margin: 0 0 16px; max-width: 40rem; }
+.article .deck { font-size: 1.28rem; line-height: 1.55; margin: 0 0 14px; max-width: 38rem; }
+.article h2 { font-size: 1.55rem; line-height: 1.25; margin: 2.1em 0 0.5em; }
+.article p, .article li { max-width: 40rem; }
+.article ul, .article ol { padding-left: 1.3em; }
+.article li { margin-bottom: 0.5em; }
+.recipe { background: var(--cream-deep); border-left: 6px solid var(--gold); padding: 6px 26px 18px; max-width: 40rem; margin: 1.8em 0; }
+.recipe h2 { margin-top: 0.9em; }
+.recipe dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 22px; margin: 0; }
+.recipe dt { font-weight: 700; }
+.recipe dd { margin: 0; }
+.note { border-left: 4px solid var(--gold); padding: 2px 0 2px 18px; max-width: 40rem; font-style: italic; }
+
+.template { background: var(--cream-deep); border-left: 6px solid var(--gold); padding: 18px 24px; max-width: 40rem; margin: 1em 0; font-family: var(--body); font-size: 1rem; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* Footer */
+.site-footer { background: var(--espresso); color: var(--cream); padding: 36px 0 48px; font-size: 1rem; border-top: 3px solid var(--gold); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px 40px; }
+.site-footer p { margin: 0 0 6px; max-width: 36rem; }
+.site-footer .motto { font-family: var(--head); font-weight: 700; font-size: 1.05rem; }
+.site-footer a { color: var(--cream); text-decoration-color: var(--gold); }
+.site-footer a:hover { color: #fff; }
+.site-footer a:focus-visible { outline-color: var(--cream); }
+.foot-links { display: flex; gap: 20px; font-weight: 600; }
+
+@media (max-width: 720px) {
+  .hero { padding: 24px 0 44px; }
+  .section { padding: 44px 0; }
+  .signup { padding: 44px 0; }
+  .shelf li { grid-template-columns: 1fr; }
+  .shelf .state { padding-top: 0; }
+  .plain { padding: 22px 20px; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 1.0625rem; }
+  .wrap { padding: 0 18px; }
+  .recipe { padding: 4px 18px 14px; }
+  .recipe dl { grid-template-columns: 1fr; gap: 0; }
+  .recipe dd { margin-bottom: 8px; }
+  .brand { font-size: 1.05rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .site-nav a { transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+}
