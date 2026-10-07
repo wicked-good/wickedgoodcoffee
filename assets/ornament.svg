@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36" width="120" height="36" aria-hidden="true" focusable="false">
+  <g fill="none" stroke="#b88746" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <!-- long hairline rules on each side -->
+    <line x1="0" y1="18" x2="42" y2="18"/>
+    <line x1="78" y1="18" x2="120" y2="18"/>
+    <!-- central ornament: a coffee bean with a leaf flourish -->
+    <!-- bean -->
+    <ellipse cx="60" cy="18" rx="7" ry="10" transform="rotate(-18 60 18)"/>
+    <!-- bean fold (the characteristic crease) -->
+    <path d="M60 9 C 57 14, 57 22, 60 27"/>
+    <!-- small leaf curling off the top -->
+    <path d="M60 9 C 65 5, 70 4, 73 2 M66 6 C 68 7, 70 7, 72 5"/>
+    <!-- small leaf curling off the bottom -->
+    <path d="M60 27 C 55 31, 50 32, 47 34 M54 30 C 52 29, 50 29, 48 31"/>
+  </g>
+</svg>

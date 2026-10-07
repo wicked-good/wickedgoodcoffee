@@ -1,8 +1,8 @@
-import re,io,os
+import re,io,os,urllib.parse
 HERE=os.path.dirname(os.path.abspath(__file__))+"/"
 R=os.path.dirname(HERE.rstrip("/"))+"/"
 SUB="https://wicked-good-coffee.beehiiv.com/subscribe"
-FONTS='<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">'
+FONTS='<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">'
 OG="https://wickedgoodcoffee.com/assets/og-image.jpg"
 PUBDATE="2026-10-06"
 SP=HERE
@@ -66,6 +66,7 @@ def signup(h="Get the weekly email.",p="One roaster or café worth knowing, one 
     return f'''
 <section class="signup on-dark">
   <div class="wrap">
+    <p class="overline">The weekly</p>
     <h2>{h}</h2>
     <p>{p}</p>
     <div class="btn-row"><a class="btn" href="{SUB}">Subscribe for free</a></div>
@@ -74,6 +75,174 @@ def signup(h="Get the weekly email.",p="One roaster or café worth knowing, one 
 
 def w(path,html):
     import os; os.makedirs(os.path.dirname(R+path),exist_ok=True); open(R+path,"w").write(html)
+
+
+# ------------------------------------------------------------------
+# PLACES REGISTRY
+# One source of truth for addresses and map links on every place page
+# and in schema.org JSON-LD. Add a new address here, not inline.
+# A place can have one `addr` dict or a list of them (multi-location).
+# A `visitable` entry gets a stamp block; set visitable=False to skip
+# the stamp (e.g. a roastery not open to the public).
+# ------------------------------------------------------------------
+def _maps(name, street, city, region, postal=""):
+    """Return the Google / Apple Maps URLs for a named address."""
+    q = f"{name}, {street}, {city}, {region} {postal}".strip()
+    g = "https://www.google.com/maps/search/?api=1&query=" + urllib.parse.quote(q)
+    a = "https://maps.apple.com/?q=" + urllib.parse.quote(q)
+    return g, a
+
+PLACES = {
+  # roasters
+  "speckled-ax": {"name":"Speckled Ax", "visitable":True, "addr":[
+    {"label":"Portland café", "street":"567 Congress Street", "city":"Portland", "region":"ME", "postal":"04101"}
+  ]},
+  "vermont-artisan": {"name":"Vermont Artisan Coffee & Tea", "visitable":True, "addr":[
+    {"label":"Barn roastery and coffee bar", "street":"11 Cabin Lane", "city":"Waterbury Center", "region":"VT", "postal":"05677"}
+  ]},
+  "brio-coffeeworks": {"name":"Brio Coffeeworks", "visitable":True, "addr":[
+    {"label":"South End roastery and coffee bar", "street":"266 Pine Street, Suite 116", "city":"Burlington", "region":"VT", "postal":"05401"}
+  ]},
+  "speeder-and-earls": {"name":"Speeder & Earl's Coffee", "visitable":True, "addr":[
+    {"label":"Pine Street café", "street":"412 Pine Street", "city":"Burlington", "region":"VT", "postal":"05401"}
+  ]},
+  "coffee-by-design": {"name":"Coffee By Design", "visitable":True, "addr":[
+    {"label":"Diamond Street café", "street":"1 Diamond Street", "city":"Portland", "region":"ME"}
+  ]},
+  "rock-city": {"name":"Rock City Coffee Roasters", "visitable":True, "addr":[
+    {"label":"Rockland café", "street":"316 Main Street", "city":"Rockland", "region":"ME", "postal":"04841"}
+  ]},
+  "george-howell-coffee": {"name":"George Howell Coffee", "visitable":True, "addr":[
+    {"label":"Acton roastery", "street":"312 School Street", "city":"Acton", "region":"MA", "postal":"01720"}
+  ]},
+  "coffee-exchange": {"name":"The Coffee Exchange", "visitable":True, "addr":[
+    {"label":"Wickenden Street café", "street":"207 Wickenden Street", "city":"Providence", "region":"RI"}
+  ]},
+  "counter-culture": {"name":"Counter Culture Coffee", "visitable":False, "addr":[
+    {"label":"New England training center (not a café)", "street":"374 Somerville Avenue", "city":"Somerville", "region":"MA", "postal":"02143"}
+  ]},
+  # cafés
+  "tandem": {"name":"Tandem Coffee Roasters", "visitable":True, "addr":[
+    {"label":"Café + Roastery", "street":"122 Anderson Street", "city":"Portland", "region":"ME"},
+    {"label":"Coffee + Bakery", "street":"742 Congress Street", "city":"Portland", "region":"ME"}
+  ]},
+  "black-cap": {"name":"Black Cap Coffee & Bakery", "visitable":True, "addr":[
+    {"label":"Stowe", "street":"144 Main Street", "city":"Stowe", "region":"VT", "postal":"05672"},
+    {"label":"Morrisville", "street":"53 Lower Main Street", "city":"Morrisville", "region":"VT"},
+    {"label":"Waterbury", "street":"1 Rotarian Place", "city":"Waterbury", "region":"VT"},
+    {"label":"Burlington", "street":"42 Church Street", "city":"Burlington", "region":"VT"}
+  ]},
+  "capitol-grounds": {"name":"Capitol Grounds Café", "visitable":True, "addr":[
+    {"label":"State Street café", "street":"27 State Street", "city":"Montpelier", "region":"VT"}
+  ]},
+  "gracenote": {"name":"Gracenote Coffee", "visitable":True, "addr":[
+    {"label":"Lincoln Street coffee bar", "street":"108 Lincoln Street", "city":"Boston", "region":"MA", "postal":"02111"},
+    {"label":"High Street Place café", "street":"100 High Street Place", "city":"Boston", "region":"MA"}
+  ]},
+  "george-howell-godfrey": {"name":"George Howell Coffee at the Godfrey", "visitable":True, "addr":[
+    {"label":"Godfrey Hotel café", "street":"505 Washington Street", "city":"Boston", "region":"MA"}
+  ]},
+}
+
+ICON_MAP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+
+def stamp_for(slug):
+    """Render the place-stamp block for a page, from the PLACES registry."""
+    p = PLACES.get(slug)
+    if not p or not p.get("visitable", True):
+        # non-visitable: show a slim stamp with address, no map buttons
+        if not p: return ""
+        a = p["addr"][0]
+        full = ", ".join(x for x in [a["street"], a["city"], f"{a['region']} {a.get('postal','')}".strip()] if x)
+        return f'''
+<aside class="stamp" aria-label="Location">
+  <div>
+    <p class="city">{a["city"]}, {a["region"]}</p>
+    <p class="addr"><strong>{a["label"]}.</strong> {full}. Not open to the public.</p>
+  </div>
+  <div class="seal" aria-hidden="true"><span>{a["city"]}<br>{a["region"]}</span></div>
+</aside>'''
+
+    addrs = p["addr"]
+    name = p["name"]
+    primary = addrs[0]
+    seal = f'''<div class="seal" aria-hidden="true"><span>{primary["city"]}<br>{primary["region"]}</span></div>'''
+
+    if len(addrs) == 1:
+        a = addrs[0]
+        g, am = _maps(name, a["street"], a["city"], a["region"], a.get("postal",""))
+        full = ", ".join(x for x in [a["street"], a["city"], f"{a['region']} {a.get('postal','')}".strip()] if x)
+        return f'''
+<aside class="stamp" aria-label="Where to find it">
+  <div>
+    <p class="city">{a["city"]}, {a["region"]}</p>
+    <p class="addr"><strong>{a["label"]}.</strong> {full}</p>
+    <div class="links">
+      <a href="{g}" rel="noopener">{ICON_MAP} Open in Google Maps</a>
+      <a href="{am}" rel="noopener">{ICON_MAP} Open in Apple Maps</a>
+    </div>
+  </div>
+  {seal}
+</aside>'''
+
+    # multiple locations
+    locs = ""
+    for a in addrs:
+        g, am = _maps(name, a["street"], a["city"], a["region"], a.get("postal",""))
+        full = ", ".join(x for x in [a["street"], a["city"], f"{a['region']} {a.get('postal','')}".strip()] if x)
+        locs += f'''
+  <div class="loc">
+    <p class="city">{a["label"]}</p>
+    <p class="addr">{full}</p>
+    <div class="links">
+      <a href="{g}" rel="noopener">{ICON_MAP} Google Maps</a>
+      <a href="{am}" rel="noopener">{ICON_MAP} Apple Maps</a>
+    </div>
+  </div>'''
+    return f'''
+<aside class="stamp multi" aria-label="Where to find it">
+  <div>
+    <p class="city">{primary["city"]}, {primary["region"]}{" and more" if len(addrs)>1 else ""}</p>
+    {locs}
+  </div>
+</aside>'''
+
+def place_jsonld(slug, title, path, otype):
+    """Build Article + Place JSON-LD for a page in the PLACES registry."""
+    base = {
+        "@context":"https://schema.org",
+        "@type":"Article",
+        "headline":title,
+        "datePublished":PUBDATE,
+        "dateModified":PUBDATE,
+        "author":{"@type":"Organization","name":"Wicked Good Coffee"},
+        "image":OG,
+        "publisher":{"@type":"Organization","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/"},
+        "mainEntityOfPage":"https://wickedgoodcoffee.com"+path
+    }
+    import json
+    out = ['<script type="application/ld+json">'+json.dumps(base)+'</script>']
+    p = PLACES.get(slug)
+    if p:
+        schema_type = "CafeOrCoffeeShop" if otype=="shop" else "LocalBusiness"
+        for a in p["addr"]:
+            d = {
+                "@context":"https://schema.org",
+                "@type":schema_type,
+                "name":p["name"] + (f" ({a['label']})" if len(p["addr"])>1 else ""),
+                "address":{
+                    "@type":"PostalAddress",
+                    "streetAddress":a["street"],
+                    "addressLocality":a["city"],
+                    "addressRegion":a["region"],
+                    "addressCountry":"US"
+                }
+            }
+            if a.get("postal"):
+                d["address"]["postalCode"] = a["postal"]
+            out.append('<script type="application/ld+json">'+json.dumps(d)+'</script>')
+    return "".join(out)
+
 
 # HOME
 ld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/","description":"Coffee guides: brewing at home, roasters and cafés worth knowing, from New England and beyond."}</script>'
@@ -84,24 +253,27 @@ home=head("Wicked Good Coffee: coffee worth talking about","Brewing guides, roas
       <img class="sign" src="/assets/sign-1100.webp" srcset="/assets/sign-600.webp 600w, /assets/sign-1100.webp 1100w" sizes="(max-width: 800px) 92vw, 760px" width="1100" height="813" alt="Wicked Good Coffee: a weathered wooden shop sign with a steaming cup, hanging from an iron bracket">
       <h1>Coffee worth talking about.</h1>
       <p class="lede">Guides to brewing better coffee at home, and to the roasters and cafés worth knowing. The name is pure New England. The coffee is from everywhere.</p>
+      <img class="flourish" src="/assets/flourish.svg" width="180" height="24" alt="">
       <div class="btn-row"><a class="btn" href="{SUB}">Get the weekly email</a><a class="btn quiet" href="/guides/pour-over/">Start with pour-over</a></div>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
+      <p class="overline">The almanac</p>
       <h2>What you'll find here</h2>
       <ul class="shelf">
-        <li><div><h3><a href="/guides/pour-over/">Brew guides</a></h3><p>Making good coffee at home without turning the kitchen into a laboratory. Ratios, grinds, and what to change when a cup tastes off.</p></div><span class="state">Open now</span></li>
-        <li><div><h3><a href="/roasters/">Roasters worth knowing</a></h3><p>Who's roasting well, what they're known for, and which bag to try first. We start on home turf in New England, then go wider.</p></div><span class="state">Open now</span></li>
-        <li><div><h3><a href="/coffee-shops/">Coffee shops worth the drive</a></h3><p>The places worth getting off the highway for, with the practical details sorted out before you go.</p></div><span class="state">Open now</span></li>
-        <li><div><h3><a href="/contribute/">From readers</a></h3><p>Reviews, place tips, brewing tips, and coffee stories from people who care about coffee. Add yours.</p></div><span class="state">Open now</span></li>
+        <li><p class="overline">Brewing</p><h3><a href="/guides/pour-over/">Brew guides</a></h3><p>Making good coffee at home without turning the kitchen into a laboratory. Ratios, grinds, and what to change when a cup tastes off.</p></li>
+        <li><p class="overline">Who roasts</p><h3><a href="/roasters/">Roasters worth knowing</a></h3><p>Who's roasting well, what they're known for, and which bag to try first. We start on home turf in New England, then go wider.</p></li>
+        <li><p class="overline">Where to go</p><h3><a href="/coffee-shops/">Coffee shops worth the drive</a></h3><p>The places worth getting off the highway for, with addresses, map links, and the practical details sorted out before you go.</p></li>
+        <li><p class="overline">From readers</p><h3><a href="/contribute/">A guide with contributors</a></h3><p>Reviews, place tips, brewing tips, and coffee stories from people who care about coffee. Add yours.</p></li>
       </ul>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
+      <p class="overline">Written with readers</p>
       <h2>This guide has contributors</h2>
       <p>The best coffee tips come from people who drink a lot of coffee. Review a place you've been, point us to a roaster or café we've missed, or share a brewing tip that works. Contributors get a thank-you by name, or anonymously if you'd rather.</p>
       <div class="btn-row"><a class="btn quiet" href="/contribute/">See how to contribute</a></div>
@@ -110,51 +282,6 @@ home=head("Wicked Good Coffee: coffee worth talking about","Brewing guides, roas
 </main>
 '''+signup()+FOOT
 w("index.html",home)
-
-# GUIDES INDEX
-gi=head("Guides | Wicked Good Coffee","Brewing guides now, with roaster and café guides on the way, starting in New England.","/guides/")+header("guides")+f'''
-<main id="main">
-  <section class="article">
-    <div class="wrap">
-      <header>
-        <h1>Guides</h1>
-        <p class="deck">Brewing help now. Roaster and café guides are on the way, starting with New England.</p>
-      </header>
-      <a class="guide-row" href="/guides/pour-over/">
-        <p class="meta">Brewing basics, 6 minute read</p>
-        <h3>How to make pour-over coffee at home</h3>
-        <p>One ratio, one grind, one pour. Everything you need for a clean, sweet cup, plus what to change when it tastes off.</p>
-      </a>
-      <a class="guide-row" href="/guides/french-press/" style="margin-top:2rem">
-        <p class="meta">Brewing basics, 5 minute read</p>
-        <h3>How to make french press coffee at home</h3>
-        <p>Coarse grind, hot water, four minutes. The whole method, plus how to fix a cup that's muddy, bitter, or weak.</p>
-      </a>
-      <a class="guide-row" href="/guides/percolator/" style="margin-top:2rem">
-        <p class="meta">Brewing basics, 5 minute read</p>
-        <h3>How to make stovetop percolator coffee</h3>
-        <p>Coarse grind, medium heat, then low. How to get a hot, hearty pot without boiling it into bitterness.</p>
-      </a>
-      <a class="guide-row" href="/guides/moka-pot/" style="margin-top:2rem">
-        <p class="meta">Brewing basics, 5 minute read</p>
-        <h3>How to make coffee in a moka pot</h3>
-        <p>The Italian stovetop pot. Fill it right, keep the heat at medium, and pull it off at the first gurgle.</p>
-      </a>
-      <p class="note" style="margin-top:2.5rem">Looking for places instead of methods? See the <a href="/roasters/">roasters</a> and <a href="/coffee-shops/">coffee shops</a>.</p>
-    </div>
-  </section>
-</main>
-'''+signup()+FOOT
-w("guides/index.html",gi)
-
-# POUR-OVER: reuse the article body from the previous version
-old=open(R+"guides/pour-over/index.html").read()
-art=re.search(r'<article class="article">.*?</article>',old,re.S).group(0)
-art=art.replace("Brewing basics · 6 minute read · October 2026","Brewing basics, 6 minute read, October 2026")
-art=art.replace("Write down what you did.","Write down what you did.")
-ld2='<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to make pour-over coffee at home","datePublished":"2026-10-06","dateModified":"2026-10-06","author":{"@type":"Organization","name":"Wicked Good Coffee"},"image":"'+OG+'","publisher":{"@type":"Organization","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/"},"mainEntityOfPage":"https://wickedgoodcoffee.com/guides/pour-over/"}</script>'
-po=head("How to make pour-over coffee at home | Wicked Good Coffee","A simple pour-over method: the 1:16 ratio, the right grind and water temperature, step-by-step pouring, and how to fix coffee that tastes sour or bitter.","/guides/pour-over/",ld2,otype="article",ogtitle="How to make pour-over coffee at home")+header("guides")+'\n<main id="main">\n'+art+'\n</main>\n'+signup("Get a roaster worth knowing in your inbox every week.","One roaster or café, one brewing tip, and what's new in coffee. Free.")+FOOT
-w("guides/pour-over/index.html",po)
 
 # ABOUT
 ab=head("About | Wicked Good Coffee","Wicked Good Coffee is a coffee guide from Glenn: brewing help, roasters and cafes worth knowing, and how the recommendations are made.","/about/")+header("about")+f'''
@@ -165,11 +292,11 @@ ab=head("About | Wicked Good Coffee","Wicked Good Coffee is a coffee guide from 
         <h1>About Wicked Good Coffee</h1>
         <p class="deck">A coffee guide from Glenn, a wicked pissah guy.</p>
       </header>
-      <p>"Wicked good" is New England for really, really good. The name comes from home turf, and the first roaster and café guides start there. But coffee is global, so this site won't stay in one corner of the map.</p>
+      <p class="lead">"Wicked good" is New England for really, really good. The name comes from home turf, and the first roaster and café guides start there. But coffee is global, so this site won't stay in one corner of the map.</p>
       <p>There's no coffee snobbery required. Just good coffee, and the places and people behind it.</p>
 
       <h2>What you'll find here</h2>
-      <p>Brew guides for making better coffee at home. Profiles of roasters and cafés worth knowing. Reader reviews from people who've been. And a weekly email that pulls it together.</p>
+      <p>Brew guides for making better coffee at home. Profiles of roasters and cafés worth knowing, each with an address and a map link. Reader reviews from people who've been. And a weekly email that pulls it together.</p>
 
       <h2>Where the content comes from</h2>
       <p>What you read here is a mix of research, personal visits, and reader contributions. Each page says which. Most profiles are researched from published sources, roaster and café websites, and public reviews. Where Glenn has been, or a reader has weighed in, the page says that too.</p>
@@ -205,6 +332,18 @@ nf=head("Page not found | Wicked Good Coffee","Page not found.","/404.html",noin
 w("404.html",nf)
 
 
+# ---------------- GUIDES ----------------
+# POUR-OVER: reuse the article body from the previous version, add .lead on first paragraph
+old=open(R+"guides/pour-over/index.html").read()
+m=re.search(r'<article class="article">.*?</article>',old,re.S)
+art=m.group(0) if m else ""
+# add .lead to first <p> that's inside the article but after the header
+art = re.sub(r'(</header>\s*)<p>', r'\1<p class="lead">', art, count=1)
+art=art.replace("Brewing basics · 6 minute read · October 2026","Brewing basics, 6 minute read, October 2026")
+ld2='<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to make pour-over coffee at home","datePublished":"2026-10-06","dateModified":"2026-10-06","author":{"@type":"Organization","name":"Wicked Good Coffee"},"image":"'+OG+'","publisher":{"@type":"Organization","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/"},"mainEntityOfPage":"https://wickedgoodcoffee.com/guides/pour-over/"}</script>'
+po=head("How to make pour-over coffee at home | Wicked Good Coffee","A simple pour-over method: the 1:16 ratio, the right grind and water temperature, step-by-step pouring, and how to fix coffee that tastes sour or bitter.","/guides/pour-over/",ld2,otype="article",ogtitle="How to make pour-over coffee at home")+header("guides")+'\n<main id="main">\n'+art+'\n</main>\n'+signup("Get a roaster worth knowing in your inbox every week.","One roaster or café, one brewing tip, and what's new in coffee. Free.")+FOOT
+w("guides/pour-over/index.html",po)
+
 # FRENCH PRESS
 FP_ART = """<article class="article">
   <div class="wrap">
@@ -214,7 +353,7 @@ FP_ART = """<article class="article">
       <p class="deck">Coarse grind, hot water, four minutes. Here's the whole method, and what to change when a cup comes out muddy, bitter, or weak.</p>
     </header>
 
-    <p>A french press is the simplest way to brew a full-bodied cup. The grounds steep in hot water, then you push a metal mesh filter down to hold them at the bottom. Because the mesh lets the coffee's natural oils through, the cup tastes heavier and rounder than one made with a paper filter. It's hard to do badly, and a few small habits make it much better.</p>
+    <p class="lead">A french press is the simplest way to brew a full-bodied cup. The grounds steep in hot water, then you push a metal mesh filter down to hold them at the bottom. Because the mesh lets the coffee's natural oils through, the cup tastes heavier and rounder than one made with a paper filter. It's hard to do badly, and a few small habits make it much better.</p>
 
     <h2>What you need</h2>
     <ul>
@@ -276,6 +415,8 @@ w("guides/french-press/index.html",fp)
 
 def guide(slug,title,desc,deck,body,ogdesc=None):
     ld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"'+title+'","datePublished":"'+PUBDATE+'","dateModified":"'+PUBDATE+'","author":{"@type":"Organization","name":"Wicked Good Coffee"},"image":"'+OG+'","publisher":{"@type":"Organization","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/"},"mainEntityOfPage":"https://wickedgoodcoffee.com/guides/'+slug+'/"}</script>'
+    # mark the first <p> in body as the lead
+    body2 = re.sub(r'(\s*)<p>', r'\1<p class="lead">', body, count=1)
     art=f'''<article class="article">
   <div class="wrap">
     <header>
@@ -283,7 +424,7 @@ def guide(slug,title,desc,deck,body,ogdesc=None):
       <h1>{title}</h1>
       <p class="deck">{deck}</p>
     </header>
-{body}
+{body2}
   </div>
 </article>'''
     html=head(title+" | Wicked Good Coffee",desc,"/guides/"+slug+"/",ld,otype="article",ogtitle=title)+header("guides")+'\n<main id="main">\n'+art+'\n</main>\n'+signup("Get a roaster worth knowing in your inbox every week.","One roaster or café, one brewing tip, and what's new in coffee. Free.")+FOOT
@@ -400,8 +541,13 @@ guide("moka-pot","How to make coffee in a moka pot","A simple moka pot method: f
 
 
 def place(section,slug,title,desc,deck,body,kicker,cur):
+    """A roaster or café profile. Pulls address + map links from PLACES."""
     path=f"/{section}/{slug}/"
-    ld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"'+title+'","datePublished":"'+PUBDATE+'","dateModified":"'+PUBDATE+'","author":{"@type":"Organization","name":"Wicked Good Coffee"},"image":"'+OG+'","publisher":{"@type":"Organization","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/"},"mainEntityOfPage":"https://wickedgoodcoffee.com'+path+'"}</script>'
+    otype = "shop" if section == "coffee-shops" else "roaster"
+    ld = place_jsonld(slug, title, path, otype)
+    stamp = stamp_for(slug)
+    # mark the first <p> inside body as the lead paragraph for the drop cap
+    body2 = re.sub(r'(\s*)<p>', r'\1<p class="lead">', body, count=1)
     art=f'''<article class="article">
   <div class="wrap">
     <header>
@@ -409,7 +555,8 @@ def place(section,slug,title,desc,deck,body,kicker,cur):
       <h1>{title}</h1>
       <p class="deck">{deck}</p>
     </header>
-{body}
+{stamp}
+{body2}
     <p>Been here? <a href="/reviews/">Send us a reader review</a>.</p>
   </div>
 </article>'''
@@ -418,7 +565,7 @@ def place(section,slug,title,desc,deck,body,kicker,cur):
 
 def index_page(section,cur,title,desc,deck,rows,note):
     items="".join(f'''
-      <a class="guide-row" href="/{section}/{slug}/" style="margin-top:2rem">
+      <a class="guide-row" href="/{section}/{slug}/">
         <p class="meta">{meta}</p>
         <h3>{t}</h3>
         <p>{blurb}</p>
@@ -521,28 +668,29 @@ BC = """
     <p class="note">The details here come from published sources, and Glenn has been to the Stowe shop. Neither Black Cap's site nor the articles say who roasts its coffee, so this profile doesn't either. Hours and locations change, so check before you go. Sources: <a href="https://blackcapvermont.com/">Black Cap</a>, <a href="https://ediblevermont.ediblecommunities.com/drink/black-cap-coffee-bakery-of-vermont-burlington-morrisville-stowe-waterbury/">Edible Vermont</a>, and <a href="https://churchstmarketplace.com/blog/inside-black-cap-coffee-and-bakery-of-vermont">Church Street Marketplace</a>.</p>
 """
 place("coffee-shops","black-cap","Black Cap Coffee & Bakery in Stowe, Vermont","Black Cap Coffee & Bakery of Vermont has shops in Stowe, Waterbury, Morrisville and Burlington. Addresses, food, and the story.","A Vermont cafe and bakery on Main Street in Stowe, with three more shops around the state.",BC,"Coffee shop, Stowe, Vermont, October 2026","shops")
-index_page("coffee-shops","shops","Coffee shops","Coffee shops worth the drive, starting in New England. Each profile says what it's based on.","Places worth getting off the highway for, with the practical details sorted out before you go.",[("black-cap","Stowe, Vermont","Black Cap Coffee & Bakery","A cafe and bakery on Main Street in Stowe, with three more shops across Vermont."),("tandem","Portland, Maine","Tandem Coffee","Two Portland cafes from the same roasters: one at the roastery, one with a bakery.")]+[(sl,m,t,bl) for sl,m,t,bl in EXTRA_S],"More shops are coming. Know a place that belongs here? Email <a href='mailto:info@wickedgoodcoffee.com'>info@wickedgoodcoffee.com</a>.")
+index_page("coffee-shops","shops","Coffee shops","Coffee shops worth the drive, starting in New England. Each profile says what it's based on.","Places worth getting off the highway for, with addresses, map links and the practical details sorted out before you go.",[("black-cap","Stowe, Vermont","Black Cap Coffee & Bakery","A cafe and bakery on Main Street in Stowe, with three more shops across Vermont."),("tandem","Portland, Maine","Tandem Coffee","Two Portland cafes from the same roasters: one at the roastery, one with a bakery.")]+[(sl,m,t,bl) for sl,m,t,bl in EXTRA_S],"More shops are coming. Know a place that belongs here? Email <a href='mailto:info@wickedgoodcoffee.com'>info@wickedgoodcoffee.com</a>.")
 
 
 MAIL="info@wickedgoodcoffee.com"
 SUBJ="Reader review: "
-BODYT="Place (name and town):\n\nWhen you went:\n\nWhat you ordered or bought:\n\nWhat you liked, or didn't:\n\nWould you go back?\n\nName to show (first name and town, or anonymous):\n\nI visited this place myself, I wasn't paid or given anything for this review, and you can publish it."
-import urllib.parse
+BODYT="Place (name and town):\n\nAddress or street, if you know it:\n\nWhen you went:\n\nWhat you ordered or bought:\n\nWhat you liked, or didn't:\n\nWould you go back?\n\nName to show (first name and town, or anonymous):\n\nI visited this place myself, I wasn't paid or given anything for this review, and you can publish it."
 href="mailto:"+MAIL+"?subject="+urllib.parse.quote(SUBJ)+"&body="+urllib.parse.quote(BODYT)
 REV = """
-    <p>Been to a roaster or café we cover, or got a favorite we haven't found yet? Tell us about it. Honest reviews from real visits are welcome, good and bad.</p>
+    <p class="lead">Been to a roaster or café we cover, or got a favorite we haven't found yet? Tell us about it. Honest reviews from real visits are welcome, good and bad.</p>
     <div class="btn-row"><a class="btn" href='""" + href + """'>Email your review</a></div>
     <p>If the button doesn't open your email, send it to <strong>info@wickedgoodcoffee.com</strong>. It's free to send, and free to be published.</p>
 
     <h2>How it works</h2>
     <ol>
       <li><strong>Write a short review.</strong> What you ordered or bought, what you liked or didn't, and whether you'd go back. A few sentences is plenty.</li>
-      <li><strong>Email it to us.</strong> Use the button above, or copy the template below.</li>
+      <li><strong>Email it to us.</strong> Use the button above, or copy the template below. Including the street address helps us put a map pin on the right place.</li>
       <li><strong>We read every one.</strong> If it's honest and follows the rules below, we publish it on this page and may share it in the newsletter. We'll email you if we have a question.</li>
     </ol>
 
     <h2>The template</h2>
     <pre class="template">Place (name and town):
+
+Address or street, if you know it:
 
 When you went:
 
@@ -575,21 +723,20 @@ html=head("Reader reviews | Wicked Good Coffee","Send a short, honest review of 
 w("reviews/index.html",html)
 
 
-import urllib.parse as _u
 def _mailto(subj,body):
-    return "mailto:info@wickedgoodcoffee.com?subject="+_u.quote(subj)+"&body="+_u.quote(body)
-TIP_PLACE=_mailto("Place tip: ","Name of the roaster or cafe:\n\nTown and state (or country):\n\nWebsite, if you know it:\n\nWhy it's worth a stop:\n\nName to credit (first name and town, or anonymous):\n\nYou can use this tip, and I'm not connected to this business (or I've said how I am).")
+    return "mailto:info@wickedgoodcoffee.com?subject="+urllib.parse.quote(subj)+"&body="+urllib.parse.quote(body)
+TIP_PLACE=_mailto("Place tip: ","Name of the roaster or cafe:\n\nStreet address and town (helps us put a map pin on it):\n\nWebsite, if you know it:\n\nWhy it's worth a stop:\n\nName to credit (first name and town, or anonymous):\n\nYou can use this tip, and I'm not connected to this business (or I've said how I am).")
 TIP_BREW=_mailto("Brewing tip: ","What method or tool is this for?\n\nYour tip, ratio, or fix:\n\nWhat problem does it solve?\n\nName to credit (first name and town, or anonymous):\n\nYou can use this tip.")
-TIP_STORY=_mailto("Coffee story: ","Your story (a few short paragraphs is plenty):\n\nPlace or person it's about, if any:\n\nName to show (first name and town, or anonymous):\n\nThis is a true story, and you can publish it.")
+TIP_STORY=_mailto("Coffee story: ","Your story (a few short paragraphs is plenty):\n\nPlace or person it's about, if any:\n\nStreet address, if the story has one:\n\nName to show (first name and town, or anonymous):\n\nThis is a true story, and you can publish it.")
 CONTRIB = """
-    <p>The best coffee advice comes from people who drink a lot of coffee. This guide gets better with every reader who adds to it. Pick a way to pitch in.</p>
+    <p class="lead">The best coffee advice comes from people who drink a lot of coffee. This guide gets better with every reader who adds to it. Pick a way to pitch in.</p>
 
     <h2>Review a place</h2>
     <p>Been to a roaster or café we cover, or one we haven't found yet? Send a short, honest review. Good or critical, as long as it's fair and from a real visit.</p>
     <div class="btn-row"><a class="btn" href="/reviews/">Write a review</a></div>
 
     <h2>Recommend a place</h2>
-    <p>Know a roaster or café we should cover? Tell us its name, its town, and why it's worth a stop. We'll research it, and if it fits, write it up and thank you for the tip.</p>
+    <p>Know a roaster or café we should cover? Tell us its name, its street address, and why it's worth a stop. The address helps us put a map pin on it. If it fits, we'll research it, write it up, and thank you for the tip.</p>
     <div class="btn-row"><a class="btn" href='""" + TIP_PLACE + """'>Recommend a place</a></div>
 
     <h2>Share a brewing tip</h2>
@@ -606,6 +753,7 @@ CONTRIB = """
     <ul>
       <li><strong>It's free.</strong> There's no cost to contribute and no payment for publishing. We don't pay for reviews or tips, and we don't trade free coffee for them.</li>
       <li><strong>Keep it real.</strong> Write about things you actually know or did. If you own, work for, or compete with a place, say so.</li>
+      <li><strong>Addresses help.</strong> For a place recommendation or review, a street address lets us drop a map pin that opens correctly in Google and Apple Maps. If you don't have it, send what you have.</li>
       <li><strong>Credit is yours to choose.</strong> We thank you by the first name and town you give us, or anonymously. We never publish your email address.</li>
       <li><strong>We check before we publish.</strong> Place tips and brewing tips get verified against other sources. We may edit for length and clarity, and we won't change what you meant.</li>
       <li><strong>We can't publish everything.</strong> Personal attacks, accusations we can't support, spam, and ads are out.</li>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 24" width="180" height="24" aria-hidden="true" focusable="false">
+  <g fill="none" stroke="#b88746" stroke-width="1.3" stroke-linecap="round">
+    <!-- scrollwork, echoing the sign's painted scroll -->
+    <path d="M20 12 C 40 4, 55 20, 72 12 S 95 4, 108 12 S 140 20, 160 12"/>
+    <!-- center diamond -->
+    <path d="M85 12 L 90 7 L 95 12 L 90 17 Z" fill="#b88746" stroke="none"/>
+    <!-- end caps -->
+    <circle cx="18" cy="12" r="1.6" fill="#b88746" stroke="none"/>
+    <circle cx="162" cy="12" r="1.6" fill="#b88746" stroke="none"/>
+  </g>
+</svg>
