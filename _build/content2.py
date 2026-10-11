@@ -707,8 +707,8 @@ DR = """
     <p>So he started contacting farmers himself. Where he can import coffee directly, he does. The result is on the menu board: on the day Glenn visited, the "Rare &amp; Limited" column alone held coffees from Panama, Hawaii, Sri Lanka, Puerto Rico and Trinidad, and the "Uncommon" column added China, Cameroon, Ecuador, Flores, Ghana and the Philippines. Coffees from Puerto Rico and Hawaii grow on United States soil but almost never appear on an American café's menu.</p>
 
     <figure class="photo">
-      <img src="/assets/dueling-rabbits/roaster.webp" width="1050" height="1400" alt="Adam Rausch sits at a drum coffee roaster in a small back room, in a T-shirt that reads 'Delaware Coffee: Worth the Fight,' with shelves of green and roasted coffee behind him.">
-      <figcaption>Adam at the roaster, visible from the café through a window. His T-shirt reads "Delaware Coffee: Worth the Fight."</figcaption>
+      <img src="/assets/dueling-rabbits/roaster.webp" width="1258" height="1400" alt="Adam Rausch sits at a small drum roaster in a back room, in a T-shirt that reads 'Delaware Coffee, Roasters of Exotic Origins, Roasted in Wilmington, Worth the Fight, 2023,' with shelves of bagged coffee behind him.">
+      <figcaption>Adam at the roaster, visible from the café through a window. His T-shirt reads, in a circle around the Dueling Rabbits logo, "Delaware Coffee · Roasters of Exotic Origins · Roasted in Wilmington · Worth the Fight · 2023."</figcaption>
     </figure>
 
     <h2>No syrups, by design</h2>
@@ -722,7 +722,7 @@ DR = """
     <p>Which is to say: if you want a flavored drink, this isn't the stop. If you want to drink a single-origin pour-over from somewhere you've never heard of, roasted a few feet away, this is exactly the stop.</p>
 
     <h2>What Glenn ordered</h2>
-    <p>The Cameroon, as a pour-over. Glenn's own notes aside, the menu listed it under "Uncommon." Cameroon rarely appears on an American café menu at all, which is the Dueling Rabbits proposition in a single cup.</p>
+    <p>The Cameroon, as a pour-over. The menu listed it under "Uncommon," from the Grassfields Co-op, with the roaster's tasting notes of toasted coconut and cocoa. $6.00 for a cup. Cameroon rarely appears on an American café menu at all, which is the Dueling Rabbits proposition in a single cup.</p>
 
     <div class="photo-grid">
       <figure class="photo">
