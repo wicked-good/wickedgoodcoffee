@@ -661,4 +661,90 @@ GG+=_note("This profile is researched from published sources, not from a visit. 
 place("coffee-shops","george-howell-godfrey","George Howell Coffee at the Godfrey Hotel in Boston","The George Howell Coffee cafe in the Godfrey Hotel on Washington Street in Boston opened in 2016. Address, hours, and what to know.","The flagship Boston cafe of a light-roast, single-estate Massachusetts roaster.",GG,"Coffee shop, Boston, Massachusetts, October 2026","shops")
 EXTRA_S.append(("george-howell-godfrey","Boston, Massachusetts","George Howell Coffee at the Godfrey","The flagship Boston cafe of a Massachusetts light-roast, single-estate roaster."))
 
+# ---------------- DUELING RABBITS ----------------
+# From Glenn's visit on October 11, 2026, and his interview with the owner,
+# Adam Rausch. All quotes are from that conversation. Facts about the shop
+# (motto, year, menu, awards) are drawn from Glenn's photos of the storefront,
+# menu board and award trophy taken on the same visit.
+DR = """
+    <figure class="photo">
+      <img src="/assets/dueling-rabbits/storefront.webp" width="1200" height="1600" alt="A round white sign reading 'Dueling Rabbits 302 Coffee Roasters, Hop Fast Sip Slow, Est 2023,' with two boxing rabbits in brown gloves, hung above a white brick entrance.">
+      <figcaption>Dueling Rabbits, in the back of a bookstore on North Market Street, Wilmington. Photo by Glenn, October 11, 2026.</figcaption>
+    </figure>
+
+    <p>Dueling Rabbits sits at the back of a bookstore on North Market Street in downtown Wilmington. The round shop sign carries two boxing rabbits, an "est 2023," and the shop's motto: "Hop Fast · Sip Slow." On a Saturday morning in October 2026, Glenn stopped in and talked with Adam Rausch, who owns it and roasts every bag himself.</p>
+
+    <div class="recipe">
+      <h2>The short version</h2>
+      <dl>
+        <dt>Where</dt><dd>601 N Market Street, Wilmington, DE 19801, in the back of a bookstore</dd>
+        <dt>Who</dt><dd>Adam Rausch, who owns and roasts</dd>
+        <dt>Opened</dt><dd>2023, after Rausch moved to Delaware from Kentucky in 2022</dd>
+        <dt>Motto</dt><dd>Hop Fast · Sip Slow</dd>
+        <dt>What's on</dt><dd>Fifteen single-origin coffees the day Glenn visited, sorted on the menu board into Rare &amp; Limited, Uncommon, and Classic Origins. Classic espresso drinks and a loose-leaf tea list.</dd>
+        <dt>What's not on</dt><dd>Flavored syrups, blended lattes</dd>
+        <dt>Hours</dt><dd>Tuesday to Friday 7am to 3pm, Saturday 8am to 3pm, Sunday 8am to noon. Closed Monday.</dd>
+        <dt>Awards</dt><dd>A Wilmington 2026 Platinum Winner trophy was on the counter</dd>
+      </dl>
+    </div>
+
+    <h2>How Adam ended up roasting in Wilmington</h2>
+    <p>Rausch grew up near Cincinnati, spent a year in Lexington, Kentucky, and met his now-wife, who's from Wilmington. He had a candle company then and was roasting coffee on the side as a hobby, giving it out to friends. By the time he and his wife moved to Delaware in 2022, he had already decided the next thing was a roastery and café of his own. He opened Dueling Rabbits in 2023.</p>
+
+    <figure class="photo">
+      <img src="/assets/dueling-rabbits/menu.webp" width="1200" height="1600" alt="The menu board, divided into three single-origin categories, classic espresso drinks and loose-leaf teas.">
+      <figcaption>The menu board on October 11, 2026, with coffees from Panama, Hawaii, Sri Lanka, Puerto Rico, Trinidad, China, Cameroon, Ecuador, Flores, Ghana, the Philippines, Burundi, Honduras, El Salvador and India. The list changes.</figcaption>
+    </figure>
+
+    <h2>Why the menu looks different</h2>
+    <p>Early on, Rausch said, he noticed that when he did events alongside other small roasters, they were all selling the same coffees. The green-coffee marketplaces most roasters buy from stock the same handful of origins: Colombia, Ethiopia, Kenya, Guatemala.</p>
+
+    <blockquote class="pullquote">
+      <p>There's over 81 coffee producing regions in the world. Where are the other ones at? They're not on these sites.</p>
+      <cite>Adam Rausch, Dueling Rabbits</cite>
+    </blockquote>
+
+    <p>So he started contacting farmers himself. Where he can import coffee directly, he does. The result is on the menu board: on the day Glenn visited, the "Rare &amp; Limited" column alone held coffees from Panama, Hawaii, Sri Lanka, Puerto Rico and Trinidad, and the "Uncommon" column added China, Cameroon, Ecuador, Flores, Ghana and the Philippines. Coffees from Puerto Rico and Hawaii grow on United States soil but almost never appear on an American café's menu.</p>
+
+    <figure class="photo">
+      <img src="/assets/dueling-rabbits/roaster.webp" width="1050" height="1400" alt="Adam Rausch sits at a drum coffee roaster in a small back room, in a T-shirt that reads 'Delaware Coffee: Worth the Fight,' with shelves of green and roasted coffee behind him.">
+      <figcaption>Adam at the roaster, visible from the café through a window. His T-shirt reads "Delaware Coffee: Worth the Fight."</figcaption>
+    </figure>
+
+    <h2>No syrups, by design</h2>
+    <p>You won't find a vanilla latte here. The menu is coffee, and the espresso drinks are the ones a coffee shop served before the big chains came in: doppio, Americano, cortado, cappuccino, flat white, café latte, mocha. The daily drip was $5 on Glenn's visit. A full flight of coffees, for a serious tasting, was $24.</p>
+
+    <blockquote class="pullquote">
+      <p>It's a coffee shop for coffee people. Imagine a coffee shop from 100 plus years ago. That's how it is here.</p>
+      <cite>Adam Rausch, Dueling Rabbits</cite>
+    </blockquote>
+
+    <p>Which is to say: if you want a flavored drink, this isn't the stop. If you want to drink a single-origin pour-over from somewhere you've never heard of, roasted a few feet away, this is exactly the stop.</p>
+
+    <h2>What Glenn ordered</h2>
+    <p>The Cameroon, as a pour-over. Glenn's own notes aside, the menu listed it under "Uncommon." Cameroon rarely appears on an American café menu at all, which is the Dueling Rabbits proposition in a single cup.</p>
+
+    <div class="photo-grid">
+      <figure class="photo">
+        <img src="/assets/dueling-rabbits/cup.webp" width="750" height="1000" alt="A clear glass mug of black pour-over coffee on a wood table.">
+        <figcaption>Glenn's Cameroon pour-over, served in a glass mug.</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="/assets/dueling-rabbits/sign.webp" width="900" height="1200" alt="Close-up of the round shop sign with two boxing rabbits, 'Hop Fast Sip Slow,' and 'Est 2023.'">
+        <figcaption>The shop's hanging sign. The 302 is Delaware's area code.</figcaption>
+      </figure>
+    </div>
+
+    <h2>Before you go</h2>
+    <p>Seating is small. The shop's own posted rules limit indoor dining to one hour on weekdays and 30 minutes on weekends, no outside food or drinks, and pets or service animals for carry-out orders only. Closed Monday.</p>
+
+    <h2>Where to start</h2>
+    <p>Ask what Adam has on that doesn't show up on other roasters' shelves. Order a cup of it, and buy a bag to take home if you want to brew it again. If you have time and company, the $24 flight is three cups and the fastest way to taste the range.</p>
+
+    <p class="note">This profile is based on Glenn's visit to Dueling Rabbits on October 11, 2026, and an interview with its owner, Adam Rausch. Direct quotes are from that conversation and have been lightly tightened for print. Prices, menu, and the awards trophy are from photos taken on the same visit. Hours and address are as posted on Google in October 2026. See also <a href="https://www.duelingrabbits.com">Dueling Rabbits</a>.</p>
+"""
+place("roasters","dueling-rabbits","Dueling Rabbits, the roaster behind a Wilmington bookstore","A Wilmington, Delaware roaster-cafe where the owner sources single-origin coffees from countries most American roasters don't stock. From Glenn's visit and interview with Adam Rausch.","A one-person roastery and cafe in downtown Wilmington, Delaware, serving coffees from origins most American roasters don't carry.",DR,"Roaster profile, Delaware, October 2026","roasters")
+EXTRA_R.append(("dueling-rabbits","Wilmington, Delaware","Dueling Rabbits","A one-person roastery and cafe in the back of a Wilmington bookstore, carrying coffees from origins other roasters don't."))
+EXTRA_S.append(("dueling-rabbits","Wilmington, Delaware","Dueling Rabbits","See the <a href='/roasters/dueling-rabbits/'>roaster profile</a>: a one-person roastery and cafe in the back of a Wilmington bookstore."))
+
 PUBDATE="2026-10-06"

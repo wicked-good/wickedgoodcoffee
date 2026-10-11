@@ -254,6 +254,89 @@ h1, h2, h3 { font-family: var(--head); font-weight: 700; color: var(--espresso);
   font-size: 0.98rem;
 }
 
+/* Photo essay for a place profile. Hero image at the top, then a 2-up
+   gallery further down with captions below each image. */
+.photo {
+  margin: 0 0 32px;
+  max-width: 46rem;
+}
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 6px solid #fff;
+  box-shadow: 0 1px 0 var(--cream-dark), 0 10px 24px rgba(28, 20, 12, 0.18);
+}
+.photo figcaption {
+  font-family: var(--head);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--wood);
+  padding: 10px 4px 0;
+  max-width: 40rem;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+  max-width: 46rem;
+}
+.photo-grid .photo { margin: 0; }
+@media (max-width: 620px) {
+  .photo-grid { grid-template-columns: 1fr; gap: 20px; }
+  .photo img { border-width: 4px; }
+}
+
+/* Pull quote for interview content. The oversized gold opening quote mark
+   is a background glyph so screen readers don't say "left double quotation
+   mark" before every quote. */
+.pullquote {
+  position: relative;
+  margin: 2em 0;
+  padding: 10px 0 10px 56px;
+  max-width: 40rem;
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+}
+.pullquote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-family: var(--head);
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 4.2rem;
+  line-height: 1;
+  pointer-events: none;
+}
+.pullquote p {
+  font-family: var(--head);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  margin: 10px 0;
+  color: var(--espresso);
+  max-width: 32rem;
+}
+.pullquote cite {
+  display: block;
+  font-family: var(--head);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--gold-ink);
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 10px;
+}
+@media (max-width: 480px) {
+  .pullquote { padding-left: 40px; }
+  .pullquote::before { font-size: 3.4rem; }
+  .pullquote p { font-size: 1.2rem; }
+}
+
 .template { background: var(--cream-deep); padding: 18px 24px; max-width: 40rem; margin: 1em 0; font-family: var(--body); font-size: 1rem; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; border-top: 3px double var(--gold); border-bottom: 3px double var(--gold); }
 
 /* ------- Place stamp: the identifying block at the top of a roaster/café page ------- */

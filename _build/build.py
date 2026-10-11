@@ -121,6 +121,9 @@ PLACES = {
   "counter-culture": {"name":"Counter Culture Coffee", "visitable":False, "addr":[
     {"label":"New England training center (not a café)", "street":"374 Somerville Avenue", "city":"Somerville", "region":"MA", "postal":"02143"}
   ]},
+  "dueling-rabbits": {"name":"Dueling Rabbits Coffee", "visitable":True, "addr":[
+    {"label":"Roastery and café, in the back of a bookstore", "street":"601 N Market Street", "city":"Wilmington", "region":"DE", "postal":"19801"}
+  ]},
   # cafés
   "tandem": {"name":"Tandem Coffee Roasters", "visitable":True, "addr":[
     {"label":"Café + Roastery", "street":"122 Anderson Street", "city":"Portland", "region":"ME"},
