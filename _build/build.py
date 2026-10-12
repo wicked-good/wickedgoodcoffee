@@ -124,6 +124,9 @@ PLACES = {
   "dueling-rabbits": {"name":"Dueling Rabbits Coffee", "visitable":True, "addr":[
     {"label":"Roastery and café, in the back of a bookstore", "street":"601 N Market Street", "city":"Wilmington", "region":"DE", "postal":"19801"}
   ]},
+  "no-six-depot": {"name":"No. Six Depot Roastery & Cafe", "visitable":True, "addr":[
+    {"label":"Cafe, gallery, and roastery, in the old train station", "street":"6 Depot Street", "city":"West Stockbridge", "region":"MA", "postal":"01266"}
+  ]},
   # cafés
   "tandem": {"name":"Tandem Coffee Roasters", "visitable":True, "addr":[
     {"label":"Café + Roastery", "street":"122 Anderson Street", "city":"Portland", "region":"ME"},

@@ -748,3 +748,40 @@ EXTRA_R.append(("dueling-rabbits","Wilmington, Delaware","Dueling Rabbits","A on
 EXTRA_S.append(("dueling-rabbits","Wilmington, Delaware","Dueling Rabbits","See the <a href='/roasters/dueling-rabbits/'>roaster profile</a>: a one-person roastery and cafe in the back of a Wilmington bookstore."))
 
 PUBDATE="2026-10-06"
+
+
+# ---------------- NO. SIX DEPOT ----------------
+# Researched October 12, 2026 from the cafe's own site plus independent sources. No visit.
+SD = """
+    <p>No. Six Depot is a cafe, gallery, and small-batch roastery in the old train station in West Stockbridge, in the Berkshires of western Massachusetts. Husband-and-wife owners Flavio Lichtenthal and Lisa Landry started it in 2013, per the business's own site.</p>
+
+    <div class="recipe">
+      <h2>The short version</h2>
+      <dl>
+        <dt>Where</dt><dd>6 Depot Street, West Stockbridge, MA 01266</dd>
+        <dt>Hours</dt><dd>Seven days a week, 8am to 3pm, as posted on its site on October 12, 2026</dd>
+        <dt>Started</dt><dd>2013, in an 1834 train station, per the business</dd>
+        <dt>Owners</dt><dd>Flavio Lichtenthal and Lisa Landry</dd>
+        <dt>Seating</dt><dd>Inside the cafe, in the gallery, or on the deck, which overlooks Lenox Mountain</dd>
+      </dl>
+    </div>
+
+    <h2>The building</h2>
+    <p>The business describes its home as an 1834 train station. A 2021 Berkshire Edge article gives a different account of the building, reporting that an earlier depot burned in 1899, the current station went up around 1900, and the railroad closed it in 1951. Because the two sources disagree, we haven't settled on a construction date here.</p>
+
+    <h2>The coffee</h2>
+    <p>The roastery is entered through the gallery and is open to visitors. Per the business, roasting happens Monday to Friday, 9am to 5pm, and the team cups each coffee and adjusts the roast until it is right. It also says the team travels to coffee-growing countries for two to three months a year to study how coffee is grown, dried, and fermented.</p>
+    <p>Per Rural Intelligence (2013), the early setup included a vintage German-built Probat roaster and a Victoria Arduino espresso machine. That article is more than a decade old, so equipment and the menu may have changed.</p>
+
+    <h2>The cafe</h2>
+    <p>The cafe's site lists coffee and espresso drinks, other house-made drinks, and baked goods, plus a shop with coffee equipment and specialty items. It doesn't list individual menu items or prices. Per a 2023 WUPE summary of a New England Travel feature, the menu has also included sweets, sandwiches, and salads, and local art hangs on the walls.</p>
+
+    <h2>Recognition</h2>
+    <p>Per that same WUPE summary of New England Travel's list of the best coffee shop in each New England state, No. Six Depot was named Massachusetts' pick and had earlier won a 2016 Yankee Editors' Pick for best coffee shop. We haven't seen the original lists.</p>
+
+    <h2>Before you go</h2>
+    <p>The business's site does not list a phone number on the pages we checked, and some pages carry placeholder text, so check the site for any change in hours before a long drive. We did not find a closure notice.</p>
+"""
+SD+=_note("This profile is researched from published sources, not from a visit. Hours and menus change, so check before you go.",[("No. Six Depot: visit the cafe","https://sixdepot.com/pages/visit-cafe"),("No. Six Depot: about","https://sixdepot.com/pages/about"),("No. Six Depot: visit the roastery","https://sixdepot.com/pages/visit-roastery"),("Rural Intelligence (2013)","https://www.ruralintelligence.com/no-_six_depot_roastery_and_cafe/"),("The Berkshire Edge (2021)","https://theberkshireedge.com/?p=110424"),("WUPE (2023)","https://wupe.com/massachusetts-best-coffee-shop-is-right-here-in-the-berkshires/")])
+place("coffee-shops","no-six-depot","No. Six Depot Roastery & Cafe in West Stockbridge, Massachusetts","No. Six Depot is a cafe, gallery, and roastery in the old train station in West Stockbridge, Massachusetts. Address, hours, and what to know.","A cafe, gallery, and small-batch roastery in a Berkshires train station.",SD,"Coffee shop, West Stockbridge, Massachusetts, October 2026","shops")
+EXTRA_S.append(("no-six-depot","West Stockbridge, Massachusetts","No. Six Depot Roastery & Cafe","A cafe, gallery, and small-batch roastery in the old West Stockbridge train station."))
