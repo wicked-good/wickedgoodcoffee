@@ -10,7 +10,7 @@
   --cream-deep: #eadcc0;
   --cream-dark: #e2d2b0;
   --gold: #b88746;
-  --gold-ink: #8f6a37;
+  --gold-ink: #745528;
   --iron: #1c1a18;
   --head: "Libre Baskerville", Baskerville, "GFS Baskerville", Georgia, "Times New Roman", serif;
   --body: "Lora", Georgia, "Times New Roman", serif;
@@ -528,3 +528,8 @@ h1, h2, h3 { font-family: var(--head); font-weight: 700; color: var(--espresso);
   .hero.compact h1 { font-size: 1.7rem; }
   .band-news, .band-contrib { padding: 28px 18px; }
 }
+.band { background: linear-gradient(90deg, var(--espresso) 50%, var(--wood) 50%); }
+.band-contrib .overline { color: #ecd3a5; }
+@media (max-width: 820px) { .band { background: var(--espresso); } }
+.band-news { padding-left: 0; }
+@media (max-width: 820px) { .band-news { padding-left: 34px; } } @media (max-width: 480px) { .band-news { padding-left: 18px; } }
