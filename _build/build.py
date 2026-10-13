@@ -250,44 +250,6 @@ def place_jsonld(slug, title, path, otype):
     return "".join(out)
 
 
-# HOME
-ld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/","description":"Coffee guides: brewing at home, roasters and cafés worth knowing, from New England and beyond."}</script>'
-home=head("Wicked Good Coffee: coffee worth talking about","Brewing guides, roasters and cafés worth knowing, from New England and everywhere else. From Glenn.","/",ld)+header()+f'''
-<main id="main">
-  <section class="hero">
-    <div class="wrap">
-      <img class="sign" src="/assets/sign-1100.webp" srcset="/assets/sign-600.webp 600w, /assets/sign-1100.webp 1100w" sizes="(max-width: 800px) 92vw, 760px" width="1100" height="813" alt="Wicked Good Coffee: a weathered wooden shop sign with a steaming cup, hanging from an iron bracket">
-      <h1>Coffee worth talking about.</h1>
-      <p class="lede">Guides to brewing better coffee at home, and to the roasters and cafés worth knowing. The name is pure New England. The coffee is from everywhere.</p>
-      <img class="flourish" src="/assets/flourish.svg" width="180" height="24" alt="">
-      <div class="btn-row"><a class="btn" href="{SUB}">Get the weekly email</a><a class="btn quiet" href="/guides/pour-over/">Start with pour-over</a></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <p class="overline">The almanac</p>
-      <h2>What you'll find here</h2>
-      <ul class="shelf">
-        <li><p class="overline">Brewing</p><h3><a href="/guides/pour-over/">Brew guides</a></h3><p>Making good coffee at home without turning the kitchen into a laboratory. Ratios, grinds, and what to change when a cup tastes off.</p></li>
-        <li><p class="overline">Who roasts</p><h3><a href="/roasters/">Roasters worth knowing</a></h3><p>Who's roasting well, what they're known for, and which bag to try first. We start on home turf in New England, then go wider.</p></li>
-        <li><p class="overline">Where to go</p><h3><a href="/coffee-shops/">Coffee shops worth the drive</a></h3><p>The places worth getting off the highway for, with addresses, map links, and the practical details sorted out before you go.</p></li>
-        <li><p class="overline">From readers</p><h3><a href="/contribute/">A guide with contributors</a></h3><p>Reviews, place tips, brewing tips, and coffee stories from people who care about coffee. Add yours.</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <p class="overline">Written with readers</p>
-      <h2>This guide has contributors</h2>
-      <p>The best coffee tips come from people who drink a lot of coffee. Review a place you've been, point us to a roaster or café we've missed, or share a brewing tip that works. Contributors get a thank-you by name, or anonymously if you'd rather.</p>
-      <div class="btn-row"><a class="btn quiet" href="/contribute/">See how to contribute</a></div>
-    </div>
-  </section>
-</main>
-'''+signup()+FOOT
-w("index.html",home)
 
 # ABOUT
 ab=head("About | Wicked Good Coffee","Wicked Good Coffee is a coffee guide from Glenn: brewing help, roasters and cafes worth knowing, and how the recommendations are made.","/about/")+header("about")+f'''
@@ -546,9 +508,11 @@ MOKA = """
 guide("moka-pot","How to make coffee in a moka pot","A simple moka pot method: fine grind, level basket, water to the valve, medium heat, and when to pull it off. Plus fixes for bitter or weak coffee.","The Italian stovetop pot. Fill it right, keep the heat at medium, and pull it off at the first gurgle.",MOKA)
 
 
+PLACE_LOG=[]
 def place(section,slug,title,desc,deck,body,kicker,cur):
     """A roaster or café profile. Pulls address + map links from PLACES."""
     path=f"/{section}/{slug}/"
+    PLACE_LOG.append((section,slug,title,deck,kicker))
     otype = "shop" if section == "coffee-shops" else "roaster"
     ld = place_jsonld(slug, title, path, otype)
     stamp = stamp_for(slug)
@@ -619,6 +583,114 @@ SA = """
 place("roasters","speckled-ax","Speckled Ax, the wood-fired roaster in Portland, Maine","Speckled Ax roasts coffee with wood in Portland, Maine. How it's roasted, where to find it, and where to start.","A Portland, Maine roaster that fires its roaster with wood instead of gas.",SA,"Roaster profile, Maine, October 2026","roasters")
 EXTRA_R=[];EXTRA_S=[];EXTRA_G=[]
 exec(open(SP+"content2.py").read())
+
+# HOME (built after all profiles so it can feature the newest ones)
+import html as _h, datetime
+LATEST_ISSUE=("A roaster fired with wood","https://wicked-good-coffee.beehiiv.com/p/a-roaster-fired-with-wood")
+METHODS=[("Pour-over","pour-over","2½ to 3½ min"),("French press","french-press","4 min steep"),("AeroPress","aeropress","About 2 min"),("Moka pot","moka-pot","About 5 min"),("Espresso","espresso-basics","25 to 30 sec"),("Drip machine","drip-coffee-maker","4 to 8 min"),("Cold brew","cold-brew","12 to 24 hours"),("Percolator","percolator","4 to 8 min")]
+TIPS=[
+ ("Pour-over","pour-over","Start with 20 g (0.7 oz) of coffee and 320 g (about 11 fl oz) of water, ground medium-fine, with water at 195 to 205°F."),
+ ("French press","french-press","Use 30 g (1.1 oz) of coffee and 450 g (about 15 fl oz) of water, ground coarse, and steep for 4 minutes before pressing slowly."),
+ ("Espresso","espresso-basics","Aim for 18 g (0.6 oz) of coffee in and 36 g (1.3 oz) of liquid out in 25 to 30 seconds. Adjust the grind until the shot hits that time."),
+ ("Cold brew","cold-brew","Steep 170 g (6 oz) of coarse coffee in 850 g (about 28 fl oz) of water in the fridge. Start at 16 hours and adjust from there."),
+ ("Drip machine","drip-coffee-maker","Use about 60 g (2.1 oz) of coffee per 1,000 g (about 34 fl oz) of water, and weigh your carafe's water once to learn its real size."),
+ ("AeroPress","aeropress","For one cup, the maker suggests 16 to 18 g (about 0.6 oz) of coffee with water filled to mark 4, which is roughly 200 to 240 g (7 to 8 fl oz)."),
+ ("Moka pot","moka-pot","Fill the basket level without tamping, keep the water below the safety valve, and use medium heat."),
+ ("Percolator","percolator","Use about 10 g (0.35 oz) of coarse coffee per 240 g (8 fl oz) of water, and turn the heat to low once it starts perking."),
+ ("Grind size","grind-size","If a cup tastes sour or thin, grind finer. If it tastes bitter or harsh, grind coarser. Change one thing at a time."),
+]
+def build_home():
+    rows={}
+    for sl,m,t,b in EXTRA_R+EXTRA_S:
+        rows[sl.strip('/').split('/')[-1]]=m
+    def info(entry):
+        sec,slug,title,deck,kicker=entry
+        name=PLACES.get(slug,{}).get("name",title)
+        kind="Roaster" if sec=="roasters" else "Coffee shop"
+        img=f"assets/{slug}/storefront.webp"
+        return dict(sec=sec,slug=slug,name=name,deck=deck,kind=kind,town=rows.get(slug,""),href=f"/{sec}/{slug}/",img=("/"+img) if os.path.exists(R+img) else None)
+    log=[info(e) for e in PLACE_LOG]
+    # newest profile = last place() call; dedupe by slug, newest first
+    seen=set(); recent=[]
+    for it in reversed(log):
+        if it["slug"] in seen: continue
+        seen.add(it["slug"]); recent.append(it)
+    feat=recent[0]; others=recent[1:3]
+    def thumb(it,cls):
+        if it["img"]:
+            return f'<img class="{cls}" src="{it["img"]}" alt="{_h.escape(it["name"])}, storefront" loading="lazy">'
+        return f'<div class="{cls} plainthumb" aria-hidden="true"><span>{_h.escape(it["town"].split(",")[0] or it["name"])}</span></div>'
+    wk=datetime.date.today().isocalendar()[1]
+    tn,tg,tt=TIPS[wk%len(TIPS)]
+    cards="".join(f'''
+        <a class="tile" href="{it["href"]}">
+          {thumb(it,"tile-img")}
+          <div class="tile-body"><p class="meta">{it["kind"]}, {_h.escape(it["town"])}</p><h3>{_h.escape(it["name"])}</h3><p>{_h.escape(it["deck"])}</p></div>
+        </a>''' for it in others)
+    tipcard=f'''
+        <a class="tile tip" href="/guides/{tg}/">
+          <div class="tile-body"><p class="meta">Brewing tip: {tn}</p><h3>One thing to try</h3><p>{_h.escape(tt)}</p><p class="more">Read the guide</p></div>
+        </a>'''
+    methods="".join(f'<li><a href="/guides/{g}/"><strong>{n}</strong><span>{t}</span></a></li>' for n,g,t in METHODS)
+    ld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/","description":"Coffee guides: brewing at home, roasters and cafés worth knowing, from New England and beyond."}</script>'
+    home=head("Wicked Good Coffee: coffee worth talking about","Brewing guides, roasters and cafés worth knowing, from New England and everywhere else. From Glenn.","/",ld)+header()+f'''
+<main id="main">
+  <section class="hero compact">
+    <div class="wrap hero-grid">
+      <img class="sign" src="/assets/sign-600.webp" width="600" height="443" alt="Wicked Good Coffee: a weathered wooden shop sign with a steaming cup, hanging from an iron bracket">
+      <div>
+        <h1>Coffee worth talking about.</h1>
+        <p class="lede">Guides to brewing better coffee at home, and to the roasters and cafés worth knowing. The name is pure New England. The coffee is from everywhere.</p>
+        <div class="btn-row"><a class="btn" href="{SUB}">Get the weekly email</a><a class="btn quiet" href="/guides/pour-over/">Start with pour-over</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newest">
+    <div class="wrap">
+      <p class="overline">New this week</p>
+      <a class="feature" href="{feat["href"]}">
+        {thumb(feat,"feature-img")}
+        <div class="feature-body">
+          <p class="meta">{feat["kind"]}, {_h.escape(feat["town"])}</p>
+          <h2>{_h.escape(feat["name"])}</h2>
+          <p>{_h.escape(feat["deck"])}</p>
+          <p class="more">Read the profile</p>
+        </div>
+      </a>
+      <div class="tiles">{cards}{tipcard}
+      </div>
+    </div>
+  </section>
+
+  <section class="section methods">
+    <div class="wrap">
+      <p class="overline">Brewing</p>
+      <h2>Pick your method</h2>
+      <ul class="method-grid">{methods}</ul>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap band-grid">
+      <div class="band-news on-dark">
+        <p class="overline">The weekly</p>
+        <h2>One roaster or café, one tip, free.</h2>
+        <p>Latest issue: <a href="{LATEST_ISSUE[1]}">{LATEST_ISSUE[0]}</a></p>
+        <div class="btn-row"><a class="btn" href="{SUB}">Subscribe for free</a></div>
+      </div>
+      <div class="band-contrib on-dark">
+        <p class="overline">Written with readers</p>
+        <h2>This guide has contributors</h2>
+        <p>Review a place, point us to one we've missed, or share a brewing tip. Contributors get a thank-you by name, or anonymously.</p>
+        <div class="btn-row"><a class="btn" href="/contribute/">See how to contribute</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+'''+FOOT
+    w("index.html",home)
+build_home()
 index_page("roasters","roasters","Roasters","Roasters worth knowing, starting with New England. Each profile says what it's based on.","Who's roasting well and what they're known for. We start in New England and go wider.",[("speckled-ax","Maine, wood-fired","Speckled Ax","One of a handful of wood-fired coffee roasters in the United States, in Portland, Maine.")]+[(sl,m,t,b) for sl,m,t,b in EXTRA_R],"More roasters are coming. Know one that belongs here? Email <a href='mailto:info@wickedgoodcoffee.com'>info@wickedgoodcoffee.com</a>, or see <a href='/contribute/'>how to contribute</a>.")
 
 TANDEM = """
