@@ -550,6 +550,26 @@ MOKA = """
 guide("moka-pot","How to make coffee in a moka pot","A simple moka pot method: fine grind, level basket, water to the valve, medium heat, and when to pull it off. Plus fixes for bitter or weak coffee.","The Italian stovetop pot. Fill it right, keep the heat at medium, and pull it off at the first gurgle.",MOKA)
 
 
+HERO_ALT={
+ "no-six-depot":"The black No. Six Depot sign on Depot Street in West Stockbridge, reading roastery, cafe, store and gallery.",
+ "george-howell-godfrey":"The George Howell Coffee storefront and hanging sign at the Godfrey Hotel in Boston.",
+ "speckled-ax":"A wooden Speckled Ax sign reading wood roasted goodness, with a small axe-in-stump cutout.",
+ "vermont-artisan":"A bag of Vermont Artisan Coffee & Tea Guatemalan whole bean coffee on a shelf.",
+ "brio-coffeeworks":"The red metal building and glass garage door of Brio Coffeeworks in Burlington.",
+}
+def hero_fig(slug):
+    f=f"assets/{slug}/hero.webp"
+    if not os.path.exists(R+f): return ""
+    try:
+        from PIL import Image
+        w,h=Image.open(R+f).size
+    except Exception:
+        return ""
+    mw=min(w,460 if h>w else 700)
+    return f'''    <figure class="photo hero-photo" style="max-width:{mw}px">
+      <img src="/{f}" width="{w}" height="{h}" alt="{HERO_ALT.get(slug,"")}">
+    </figure>'''
+
 PLACE_LOG=[]
 def place(section,slug,title,desc,deck,body,kicker,cur):
     """A roaster or café profile. Pulls address + map links from PLACES."""
@@ -568,6 +588,7 @@ def place(section,slug,title,desc,deck,body,kicker,cur):
       <p class="deck">{deck}</p>
     </header>
 {stamp}
+{hero_fig(slug)}
 {body2}
     <p>Been here? <a href="/reviews/">Send us a reader review</a>.</p>
   </div>
@@ -649,7 +670,8 @@ def build_home():
         sec,slug,title,deck,kicker=entry
         name=PLACES.get(slug,{}).get("name",title)
         kind="Roaster" if sec=="roasters" else "Coffee shop"
-        img=f"assets/{slug}/storefront.webp"
+        img=f"assets/{slug}/hero.webp"
+        if not os.path.exists(R+img): img=f"assets/{slug}/storefront.webp"
         return dict(sec=sec,slug=slug,name=name,deck=deck,kind=kind,town=rows.get(slug,""),href=f"/{sec}/{slug}/",img=("/"+img) if os.path.exists(R+img) else None)
     log=[info(e) for e in PLACE_LOG]
     # newest profile = last place() call; dedupe by slug, newest first
@@ -660,7 +682,7 @@ def build_home():
     feat=recent[0]; others=recent[1:3]
     def thumb(it,cls):
         if it["img"]:
-            return f'<img class="{cls}" src="{it["img"]}" alt="{_h.escape(it["name"])}, storefront" loading="lazy">'
+            return f'<img class="{cls}" src="{it["img"]}" alt="{_h.escape(HERO_ALT.get(it["slug"],it["name"]+", storefront"))}" loading="lazy">'
         return f'<div class="{cls} plainthumb" aria-hidden="true"><span>{_h.escape(it["town"].split(",")[0] or it["name"])}</span></div>'
     wk=datetime.date.today().isocalendar()[1]
     tn,tg,tt=TIPS[wk%len(TIPS)]
