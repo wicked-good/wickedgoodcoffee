@@ -662,6 +662,7 @@ TIPS=[
  ("Percolator","percolator","Use about 10 g (0.35 oz) of coarse coffee per 240 g (8 fl oz) of water, and turn the heat to low once it starts perking."),
  ("Grind size","grind-size","If a cup tastes sour or thin, grind finer. If it tastes bitter or harsh, grind coarser. Change one thing at a time."),
 ]
+FEATURED="dueling-rabbits"
 def build_home():
     rows={}
     for sl,m,t,b in EXTRA_R+EXTRA_S:
@@ -679,7 +680,10 @@ def build_home():
     for it in reversed(log):
         if it["slug"] in seen: continue
         seen.add(it["slug"]); recent.append(it)
-    feat=recent[0]; others=recent[1:3]
+    # FEATURED: set to a profile slug to lead the home page with it; None = newest profile.
+    pick=[it for it in recent if it["slug"]==FEATURED] if FEATURED else []
+    feat=pick[0] if pick else recent[0]
+    others=[it for it in recent if it["slug"]!=feat["slug"]][:2]
     def thumb(it,cls):
         if it["img"]:
             return f'<img class="{cls}" src="{it["img"]}" alt="{_h.escape(HERO_ALT.get(it["slug"],it["name"]+", storefront"))}" loading="lazy">'
@@ -712,7 +716,7 @@ def build_home():
 
   <section class="newest">
     <div class="wrap">
-      <p class="overline">New this week</p>
+      <p class="overline">{"Featured" if pick else "New this week"}</p>
       <a class="feature" href="{feat["href"]}">
         {thumb(feat,"feature-img")}
         <div class="feature-body">
