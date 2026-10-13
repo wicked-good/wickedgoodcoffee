@@ -73,8 +73,50 @@ def signup(h="Get the weekly email.",p="One roaster or café worth knowing, one 
   </div>
 </section>'''
 
+def share_row(url,title):
+    import urllib.parse as up, html as hh
+    u=up.quote(url,safe=""); t=up.quote(title,safe=""); both=up.quote(title+" "+url,safe="")
+    links=[("Facebook",f"https://www.facebook.com/sharer/sharer.php?u={u}"),
+           ("X",f"https://twitter.com/intent/tweet?url={u}&text={t}"),
+           ("Bluesky",f"https://bsky.app/intent/compose?text={both}"),
+           ("Threads",f"https://www.threads.net/intent/post?text={both}"),
+           ("LinkedIn",f"https://www.linkedin.com/sharing/share-offsite/?url={u}"),
+           ("Reddit",f"https://www.reddit.com/submit?url={u}&title={t}"),
+           ("Email",f"mailto:?subject={t}&body={u}")]
+    items="".join(f'<li><a href="{h}" target="_blank" rel="noopener noreferrer">{n}</a></li>' for n,h in links)
+    return f'''
+    <nav class="share" aria-label="Share this page">
+      <p class="share-label">Share this page</p>
+      <ul>
+        <li class="share-native" hidden><button type="button" data-share>Share&hellip;</button></li>{items}
+        <li><button type="button" data-copy>Copy link</button></li>
+      </ul>
+      <p class="share-status" role="status" aria-live="polite"></p>
+    </nav>
+    <script>
+    (function(){{var n=document.querySelector(".share");if(!n)return;var u=location.href.split("#")[0],t=document.title;
+    var s=n.querySelector("[data-share]");if(navigator.share){{n.querySelector(".share-native").hidden=false;s.onclick=function(){{navigator.share({{title:t,url:u}}).catch(function(){{}});}};}}
+    var c=n.querySelector("[data-copy]"),st=n.querySelector(".share-status");
+    c.onclick=function(){{var done=function(m){{st.textContent=m;}};
+    if(navigator.clipboard&&navigator.clipboard.writeText){{navigator.clipboard.writeText(u).then(function(){{done("Link copied.");}},function(){{done("Could not copy. Copy the address from your browser.");}});}}
+    else{{done("Copy the address from your browser.");}}}};}})();
+    </script>'''
+
 def w(path,html):
-    import os; os.makedirs(os.path.dirname(R+path),exist_ok=True); open(R+path,"w").write(html)
+    import os,re as _re,html as hh
+    m=_re.match(r"^(guides|roasters|coffee-shops)/([^/]+)/index\.html$",path)
+    if m:
+        t=_re.search(r"<h1>(.*?)</h1>",html,_re.S)
+        title=hh.unescape(_re.sub(r"<[^>]+>","",t.group(1))).strip() if t else "Wicked Good Coffee"
+        url=f"https://wickedgoodcoffee.com/{m.group(1)}/{m.group(2)}/"
+        a=html.rindex("</article>")
+        i=html.rindex("</div>",0,a)
+        i=html.rindex("\n",0,i)
+        html=html[:i]+share_row(url,title)+html[i:]
+        ogimg=f"assets/{m.group(2)}/og.jpg"
+        if os.path.exists(R+ogimg):
+            html=html.replace(f'<meta property="og:image" content="{OG}">',f'<meta property="og:image" content="https://wickedgoodcoffee.com/{ogimg}">',1)
+    os.makedirs(os.path.dirname(R+path),exist_ok=True); open(R+path,"w").write(html)
 
 
 # ------------------------------------------------------------------
