@@ -551,7 +551,7 @@ guide("moka-pot","How to make coffee in a moka pot","A simple moka pot method: f
 
 
 HERO_ALT={
- "no-six-depot":"The black No. Six Depot sign on Depot Street in West Stockbridge, reading roastery, cafe, store and gallery.",
+ "no-six-depot":"The round No. Six Depot logo in white on black: roastery, cafe, store and gallery, 6 Depot St, West Stockbridge, Mass.",
  "george-howell-godfrey":"The George Howell Coffee storefront and hanging sign at the Godfrey Hotel in Boston.",
  "speckled-ax":"A wooden Speckled Ax sign reading wood roasted goodness, with a small axe-in-stump cutout.",
  "vermont-artisan":"A bag of Vermont Artisan Coffee & Tea Guatemalan whole bean coffee on a shelf.",
