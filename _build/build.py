@@ -568,7 +568,7 @@ def place(section,slug,title,desc,deck,body,kicker,cur):
 
 def index_page(section,cur,title,desc,deck,rows,note):
     items="".join(f'''
-      <a class="guide-row" href="/{section}/{slug}/">
+      <a class="guide-row" href="{slug if slug.startswith('/') else f'/{section}/{slug}/'}">
         <p class="meta">{meta}</p>
         <h3>{t}</h3>
         <p>{blurb}</p>

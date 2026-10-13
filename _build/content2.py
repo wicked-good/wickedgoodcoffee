@@ -745,6 +745,6 @@ DR = """
 """
 place("roasters","dueling-rabbits","Dueling Rabbits, the roaster behind a Wilmington bookstore","A Wilmington, Delaware roaster-cafe where the owner sources single-origin coffees from countries most American roasters don't stock. From Glenn's visit and interview with Adam Rausch.","A one-person roastery and cafe in downtown Wilmington, Delaware, serving coffees from origins most American roasters don't carry.",DR,"Roaster profile, Delaware, October 2026","roasters")
 EXTRA_R.append(("dueling-rabbits","Wilmington, Delaware","Dueling Rabbits","A one-person roastery and cafe in the back of a Wilmington bookstore, carrying coffees from origins other roasters don't."))
-EXTRA_S.append(("dueling-rabbits","Wilmington, Delaware","Dueling Rabbits","See the <a href='/roasters/dueling-rabbits/'>roaster profile</a>: a one-person roastery and cafe in the back of a Wilmington bookstore."))
+EXTRA_S.append(("/roasters/dueling-rabbits/","Wilmington, Delaware","Dueling Rabbits","A one-person roastery and cafe in the back of a Wilmington bookstore. Full profile is under roasters."))
 
 PUBDATE="2026-10-06"
