@@ -347,6 +347,8 @@ w("404.html",nf)
 old=open(R+"guides/pour-over/index.html").read()
 m=re.search(r'<article class="article">.*?</article>',old,re.S)
 art=m.group(0) if m else ""
+# the share row is added again by w(); drop any copies carried over from the previous build
+art=re.sub(r'\s*<nav class="share".*?</script>',"",art,flags=re.S)
 # add .lead to first <p> that's inside the article but after the header
 art = re.sub(r'(</header>\s*)<p>', r'\1<p class="lead">', art, count=1)
 art=art.replace("Brewing basics · 6 minute read · October 2026","Brewing basics, 6 minute read, October 2026")
@@ -650,7 +652,7 @@ exec(open(SP+"content2.py").read())
 # HOME (built after all profiles so it can feature the newest ones)
 import html as _h, datetime
 LATEST_ISSUE=("A roaster fired with wood","https://wicked-good-coffee.beehiiv.com/p/a-roaster-fired-with-wood")
-METHODS=[("Pour-over","pour-over","2½ to 3½ min"),("French press","french-press","4 min steep"),("AeroPress","aeropress","About 2 min"),("Moka pot","moka-pot","About 5 min"),("Espresso","espresso-basics","25 to 30 sec"),("Drip machine","drip-coffee-maker","4 to 8 min"),("Cold brew","cold-brew","12 to 24 hours"),("Percolator","percolator","4 to 8 min")]
+METHODS=[("Pour-over","pour-over","2½ to 3½ min"),("French press","french-press","4 min steep"),("AeroPress","aeropress","About 2 min"),("Moka pot","moka-pot","About 5 min"),("Siphon","siphon","About 2½ min"),("Espresso","espresso-basics","25 to 30 sec"),("Drip machine","drip-coffee-maker","4 to 8 min"),("Cold brew","cold-brew","12 to 24 hours"),("Percolator","percolator","4 to 8 min")]
 TIPS=[
  ("Pour-over","pour-over","Start with 20 g (0.7 oz) of coffee and 320 g (about 11 fl oz) of water, ground medium-fine, with water at 195 to 205°F."),
  ("French press","french-press","Use 30 g (1.1 oz) of coffee and 450 g (about 15 fl oz) of water, ground coarse, and steep for 4 minutes before pressing slowly."),
@@ -658,6 +660,7 @@ TIPS=[
  ("Cold brew","cold-brew","Steep 170 g (6 oz) of coarse coffee in 850 g (about 28 fl oz) of water in the fridge. Start at 16 hours and adjust from there."),
  ("Drip machine","drip-coffee-maker","Use about 60 g (2.1 oz) of coffee per 1,000 g (about 34 fl oz) of water, and weigh your carafe's water once to learn its real size."),
  ("AeroPress","aeropress","For one cup, the maker suggests 16 to 18 g (about 0.6 oz) of coffee with water filled to mark 4, which is roughly 200 to 240 g (7 to 8 fl oz)."),
+ ("Siphon","siphon","Use 25 g (0.9 oz) of coffee and 375 g (about 12.7 fl oz) of water, steep 1 to 1.5 minutes, then take it off the heat so the coffee draws down."),
  ("Moka pot","moka-pot","Fill the basket level without tamping, keep the water below the safety valve, and use medium heat."),
  ("Percolator","percolator","Use about 10 g (0.35 oz) of coarse coffee per 240 g (8 fl oz) of water, and turn the heat to low once it starts perking."),
  ("Grind size","grind-size","If a cup tastes sour or thin, grind finer. If it tastes bitter or harsh, grind coarser. Change one thing at a time."),

@@ -347,6 +347,7 @@ _G=[
  ("cold-brew","5 minute read","How to make cold brew coffee at home","Coarse grind, cold water, a long wait. A smooth concentrate that keeps for a week."),
  ("percolator","5 minute read","How to make stovetop percolator coffee","Coarse grind, medium heat, then low. How to get a hot, hearty pot without boiling it into bitterness."),
  ("moka-pot","5 minute read","How to make coffee in a moka pot","The Italian stovetop pot. Fill it right, keep the heat at medium, and pull it off at the first gurgle."),
+ ("siphon","6 minute read","How to make siphon coffee at home","Hot water rises, coffee steeps, heat comes off, and the brew drops back down. The method, the timing, and the safety basics."),
  ("espresso-basics","6 minute read","Espresso basics for beginners","18 grams in, 36 grams out, about 30 seconds. How espresso works and how to dial it in."),
  ("grind-size","5 minute read","Coffee grind size explained","Finer for short brews, coarser for long ones. How to pick a grind and fix a cup by changing it."),
  ("how-to-buy-coffee-beans","6 minute read","How to buy coffee beans","Look for the roast date, buy what you'll use in a few weeks, and keep it airtight. How to read a bag."),
@@ -357,7 +358,7 @@ _items="".join(f'''
         <h3>{t}</h3>
         <p>{b}</p>
       </a>''' for i,(s,m,t,b) in enumerate(_G))
-_gi=head("Guides | Wicked Good Coffee","Brewing guides for pour-over, french press, AeroPress, drip, cold brew, espresso, percolator and moka pot, plus how to buy beans and pick a grind size.","/guides/")+header("guides")+f'''
+_gi=head("Guides | Wicked Good Coffee","Brewing guides for pour-over, french press, AeroPress, drip, cold brew, espresso, percolator, moka pot and siphon, plus how to buy beans and pick a grind size.","/guides/")+header("guides")+f'''
 <main id="main">
   <section class="article">
     <div class="wrap">
@@ -785,3 +786,75 @@ SD = """
 SD+=_note("This profile is researched from published sources, not from a visit. Hours and menus change, so check before you go.",[("No. Six Depot: visit the cafe","https://sixdepot.com/pages/visit-cafe"),("No. Six Depot: about","https://sixdepot.com/pages/about"),("No. Six Depot: visit the roastery","https://sixdepot.com/pages/visit-roastery"),("Rural Intelligence (2013)","https://www.ruralintelligence.com/no-_six_depot_roastery_and_cafe/"),("The Berkshire Edge (2021)","https://theberkshireedge.com/?p=110424"),("WUPE (2023)","https://wupe.com/massachusetts-best-coffee-shop-is-right-here-in-the-berkshires/")])
 place("coffee-shops","no-six-depot","No. Six Depot Roastery & Cafe in West Stockbridge, Massachusetts","No. Six Depot is a cafe, gallery, and roastery in the old train station in West Stockbridge, Massachusetts. Address, hours, and what to know.","A cafe, gallery, and small-batch roastery in a Berkshires train station.",SD,"Coffee shop, West Stockbridge, Massachusetts, October 2026","shops")
 EXTRA_S.append(("no-six-depot","West Stockbridge, Massachusetts","No. Six Depot Roastery & Cafe","A cafe, gallery, and small-batch roastery in the old West Stockbridge train station."))
+
+
+# ---------------- SIPHON GUIDE ----------------
+SIPHON = """
+    <p>A siphon (also called a vacuum pot) brews coffee with heat and pressure instead of a pour. Water in the bottom glass globe is heated until it rises into the upper chamber, where it steeps with the coffee. When you take away the heat, the bottom cools, and the finished coffee is pulled back down through a filter. It makes a very clean cup, it's fun to watch, and it takes practice, mostly in managing the heat.</p>
+
+    <h2>What you need</h2>
+    <ul>
+      <li>A siphon with its upper chamber, lower globe, filter, and a heat source (a small burner, a cloth-wick alcohol burner, or a stovetop, depending on the model)</li>
+      <li>A kitchen scale that reads in grams (most can switch from ounces)</li>
+      <li>Whole beans and a grinder</li>
+      <li>A kettle for the water, a timer, and a bamboo paddle or wooden spoon for stirring</li>
+      <li>A thermometer, if you want to track the water temperature (optional)</li>
+    </ul>
+    <p>Wet and prepare the filter first. A cloth filter should be rinsed in hot water before each use, and published guides suggest replacing a cloth filter after about 7 or 8 uses.</p>
+
+    <div class="recipe">
+      <h2>The starting recipe</h2>
+      <dl>
+        <dt>Coffee</dt><dd>25 g (0.9 oz)</dd>
+        <dt>Water</dt><dd>375 g, about 12.7 fluid ounces (the ratio is about 1 part coffee to 15 parts water)</dd>
+        <dt>Water temperature</dt><dd>About 200 to 202&deg;F (93 to 94&deg;C) in the upper chamber while the coffee steeps</dd>
+        <dt>Grind</dt><dd>Medium. Published guides range from medium-fine to medium-coarse, so start in the middle and adjust.</dd>
+        <dt>Steep time</dt><dd>About 1 minute to 1 minute 30 seconds with the coffee in the upper chamber</dd>
+        <dt>Drawdown</dt><dd>About 1 minute once the heat is off</dd>
+        <dt>Makes</dt><dd>About 11 ounces of coffee, one big mug or two small cups</dd>
+      </dl>
+    </div>
+
+    <h2>Step by step</h2>
+    <ol>
+      <li><strong>Prepare the filter.</strong> Rinse the cloth filter in hot water and fit it in the upper chamber, hooking the chain or cord onto the bottom of the tube so the filter stays centered.</li>
+      <li><strong>Add the water.</strong> Pour 375 g (about 12.7 fl oz) of hot water into the bottom globe. Starting with hot water shortens the time on the burner. Dry the outside of the glass completely, because a wet globe over a flame can crack.</li>
+      <li><strong>Seat the upper chamber.</strong> Set the upper chamber on the globe and twist it gently until the gasket seals snugly. Wetting the gasket slightly can help.</li>
+      <li><strong>Heat until the water rises.</strong> As the globe heats, steam pressure pushes almost all the water up into the upper chamber. A little water may stay in the bottom.</li>
+      <li><strong>Turn the heat down.</strong> Lower the flame so the water in the top holds steady at about 200 to 202&deg;F (93 to 94&deg;C) and only bubbles gently, not boils. Excessive bubbling is a sign the heat is too high.</li>
+      <li><strong>Add the coffee and wet it all.</strong> Start the timer, add the 25 g (0.9 oz) of ground coffee, and use a short stir to saturate every grain in the first few seconds. Stir in a straight line across the top, not in circles, so you don't dig into the filter.</li>
+      <li><strong>Steep.</strong> Let the coffee steep for about 1 minute to 1 minute 30 seconds. Many guides add one more gentle stir near the end of the steep.</li>
+      <li><strong>Take it off the heat.</strong> Remove the burner, or turn it off. As the globe cools, the coffee starts to pull down through the filter. If nothing happens after a moment, set a cool, damp cloth against the globe, or blow on it, to speed the cooling.</li>
+      <li><strong>Wait for the drawdown.</strong> It takes about 1 minute. When it's done, a rounded dome of spent grounds sits on top of the filter and the coffee has collected in the bottom.</li>
+      <li><strong>Serve.</strong> Gently rock the upper chamber to break the seal and lift it off. Set it aside on a stand or plate, because it will drip. Pour the coffee from the globe once the glass is cool enough to handle safely.</li>
+    </ol>
+
+    <h2>If it doesn't taste right</h2>
+    <p>Change only one thing at a time, so you know what made the difference.</p>
+    <ul>
+      <li><strong>Harsh, bitter, or medicinal:</strong> the water was too hot, or the steep and drawdown ran too long. Lower the heat and take the pot off the burner sooner.</li>
+      <li><strong>Thin, weak, or papery:</strong> the grind may be too coarse, the steep too short, or the drawdown started too early. Grind a touch finer or steep a few seconds longer.</li>
+      <li><strong>Drawdown takes more than a minute or two:</strong> the grind is likely too fine and has clogged the filter. Grind coarser.</li>
+      <li><strong>It drops through too fast and tastes weak:</strong> grind a little finer.</li>
+      <li><strong>Brewing a small batch:</strong> filling the pot well below its capacity can make weaker coffee, and a half batch may not work well. Brew close to the size your pot is made for.</li>
+    </ul>
+
+    <h2>Safety and care</h2>
+    <ul>
+      <li>Never light a burner under a wet glass globe, and never leave a lit burner unattended.</li>
+      <li>Hot glass stays hot after the coffee is done. Let it cool before you handle it, and keep the pot away from the edge of the counter.</li>
+      <li>Alcohol burners need the fuel the maker recommends. Follow your burner's instructions.</li>
+      <li>Rinse the cloth filter well after each use, and store it as the maker advises. Wash the glass in warm soapy water, paying attention to the gasket, and dry it before the next brew.</li>
+    </ul>
+
+    <h2>Tips that make a bigger difference than gear</h2>
+    <ul>
+      <li><strong>Weigh everything.</strong> Siphons are sensitive to small changes, so a scale makes the results repeatable.</li>
+      <li><strong>Grind right before you brew.</strong> Ground coffee goes stale within minutes, not days.</li>
+      <li><strong>Buy fresh beans.</strong> Beans taste best in the first few weeks after roasting. Look for a roast date on the bag.</li>
+      <li><strong>Manage the heat first.</strong> Most siphon problems come from heat that is too high or too low. Keep notes on the flame setting you used when a cup comes out right.</li>
+    </ul>
+
+    <p class="note">This guide describes a widely used starting method, not a single correct way. Pots, burners, filters, and beans all vary, and published guides differ on grind and timing, so treat the numbers as a starting point and adjust to your taste. Based on published siphon guides, including <a href="https://prima-coffee.com/blog/siphon-brewing-guide/">Prima Coffee</a>, <a href="https://texascoffeeschool.com/the-texas-coffee-school-guide-to-brewing-coffee-with-a-vacuum-siphon-pot-also-known-as-a-vacpot/">Texas Coffee School</a>, <a href="https://library.sweetmarias.com/wp-content/uploads/2020/08/Vaccum-Coffee-Brewing-Tip-Sheet.pdf">Sweet Maria's</a>, and <a href="https://www.homegrounds.co/how-to-use-a-siphon-coffee-maker/">Home Grounds</a>.</p>
+"""
+guide("siphon","How to make siphon coffee at home","A simple siphon (vacuum pot) method: 25 g of coffee to 375 g of water, about 200 to 202°F, a 1 to 1.5 minute steep, a 1 minute drawdown, plus fixes and safety basics.","Hot water rises, the coffee steeps, the heat comes off, and the brew drops back down. Here's the method, the timing, and the safety basics.",SIPHON)
