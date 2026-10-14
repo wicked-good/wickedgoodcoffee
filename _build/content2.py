@@ -858,3 +858,35 @@ SIPHON = """
     <p class="note">This guide describes a widely used starting method, not a single correct way. Pots, burners, filters, and beans all vary, and published guides differ on grind and timing, so treat the numbers as a starting point and adjust to your taste. Based on published siphon guides, including <a href="https://prima-coffee.com/blog/siphon-brewing-guide/">Prima Coffee</a>, <a href="https://texascoffeeschool.com/the-texas-coffee-school-guide-to-brewing-coffee-with-a-vacuum-siphon-pot-also-known-as-a-vacpot/">Texas Coffee School</a>, <a href="https://library.sweetmarias.com/wp-content/uploads/2020/08/Vaccum-Coffee-Brewing-Tip-Sheet.pdf">Sweet Maria's</a>, and <a href="https://www.homegrounds.co/how-to-use-a-siphon-coffee-maker/">Home Grounds</a>.</p>
 """
 guide("siphon","How to make siphon coffee at home","A simple siphon (vacuum pot) method: 25 g of coffee to 375 g of water, about 200 to 202°F, a 1 to 1.5 minute steep, a 1 minute drawdown, plus fixes and safety basics.","Hot water rises, the coffee steeps, the heat comes off, and the brew drops back down. Here's the method, the timing, and the safety basics.",SIPHON)
+
+
+# ---------------- SLAVE TO THE GRIND ----------------
+# Reader tip (credited to Jeff, no town given). Researched October 14, 2026 from independent sources only.
+# The business's own site and Instagram could not be reached, so hours and current status are unconfirmed.
+SG = """
+    <p>Slave to the Grind is a family-run coffee shop at 58 Pondfield Road in the center of Bronxville, in Westchester County, New York. It has been serving coffee there since 1993, according to local press, and it was suggested to us by a reader.</p>
+
+    <div class="recipe">
+      <h2>The short version</h2>
+      <dl>
+        <dt>Where</dt><dd>58 Pondfield Road, Bronxville, NY 10708</dd>
+        <dt>Phone</dt><dd>914-961-7777, per a Bronxville business directory and a Sarah Lawrence student paper</dd>
+        <dt>Hours</dt><dd>Not confirmed. We could not reach the shop's own site, so check with the shop before you go.</dd>
+        <dt>Opened</dt><dd>July 3, 1993, per the owner in a 2015 comment on The Dial</dd>
+        <dt>Family</dt><dd>Opened by Carol Marshall and her husband, per BXV (2020). Her son Troy was managing it at that time.</dd>
+        <dt>Online</dt><dd><a href="https://www.instagram.com/slavetothegrind_official/">Instagram</a> (not reviewed for this profile)</dd>
+      </dl>
+    </div>
+
+    <h2>The shop</h2>
+    <p>Per BXV (2020), Carol Marshall started the shop after seeing a TV segment on the move toward fresh-roasted coffee, and several relatives have worked there over the years. A Bronxville business directory calls it the first coffee house in Westchester County, which we haven't been able to confirm independently.</p>
+
+    <h2>The coffee</h2>
+    <p>BXV (2020) reports 68 coffee varieties and a house blend of Sumatra and Colombian beans. A 2015 review in The Dial counted eight serve-yourself brewed coffees, plus lattes, hot chocolate, and tea, and described the shop as a place with plenty of tables for studying or working. A Sarah Lawrence student paper (undated) says it sells fresh beans to take home. None of the sources we found says the shop roasts its own coffee, so we list it as a coffee shop that sells beans, not as a roaster.</p>
+
+    <h2>A reader's tip</h2>
+    <p>Jeff, who told us he has no connection to the business, suggested Slave to the Grind as a neighborhood spot with a long list of coffees and a loyal crowd of regulars. His tip also made several claims that we couldn't confirm from published sources, so they are not repeated here.</p>
+"""
+SG+=_note("This profile is researched from published sources, not from a visit. Hours and menus change, so check before you go. We could not review the business's own site or Instagram, so details from the shop itself are unconfirmed.",[("BXV, Stronger Together (2020)","https://www.myhometownbronxville.com/shopping/6538-spotlight-on-slave-to-the-grind-maison-rouge-continental-109-salon"),("The Dial (2015)","https://hsdial.org/2015/12/17/the-dial-reviews-neighborhood-coffee-shops/"),("Sarah Lawrence Phoenix","https://sarahlawrencephoenix.com/arts-and-culture/2014/10/16/awne0imh54cjg5aphlc9bhx5qo70k1")])
+place("coffee-shops","slave-to-the-grind","Slave to the Grind in Bronxville, New York","Slave to the Grind is a family-run coffee shop on Pondfield Road in Bronxville, New York, open since 1993. Address, what the coffee list looks like, and what to know.","A family-run Bronxville coffee shop on Pondfield Road, open since 1993.",SG,"Coffee shop, Bronxville, New York, October 2026","shops")
+EXTRA_S.append(("slave-to-the-grind","Bronxville, New York","Slave to the Grind","A family-run Pondfield Road coffee shop in Bronxville, open since 1993. Suggested by a reader."))

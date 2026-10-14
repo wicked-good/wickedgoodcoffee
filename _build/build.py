@@ -169,6 +169,9 @@ PLACES = {
   "no-six-depot": {"name":"No. Six Depot Roastery & Cafe", "visitable":True, "addr":[
     {"label":"Cafe, gallery, and roastery, in the old train station", "street":"6 Depot Street", "city":"West Stockbridge", "region":"MA", "postal":"01266"}
   ]},
+  "slave-to-the-grind": {"name":"Slave to the Grind", "visitable":True, "addr":[
+    {"label":"Coffee shop on Pondfield Road", "street":"58 Pondfield Road", "city":"Bronxville", "region":"NY", "postal":"10708"}
+  ]},
   # cafés
   "tandem": {"name":"Tandem Coffee Roasters", "visitable":True, "addr":[
     {"label":"Café + Roastery", "street":"122 Anderson Street", "city":"Portland", "region":"ME"},
@@ -910,7 +913,10 @@ CONTRIB = """
     </ul>
 
     <h2>Contributors</h2>
-    <p class="note">No contributors listed yet. Yours could be the first name here.</p>
+    <ul>
+      <li><strong>Jeff</strong> suggested Slave to the Grind in Bronxville, New York. <a href="/coffee-shops/slave-to-the-grind/">Read the profile</a>.</li>
+    </ul>
+    <p class="note">Yours could be the next name here.</p>
 """
 html=head("Contribute | Wicked Good Coffee","Review a place, recommend a roaster or cafe, share a brewing tip, or tell a coffee story. It's free, and contributors are thanked by name.","/contribute/")+header("contribute")+'\n<main id="main">\n<article class="article">\n  <div class="wrap">\n    <header>\n      <h1>Contribute</h1>\n      <p class="deck">This guide has contributors. Here are four ways to be one.</p>\n    </header>\n'+CONTRIB+'  </div>\n</article>\n</main>\n'+signup()+FOOT
 w("contribute/index.html",html)
