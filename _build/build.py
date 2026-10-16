@@ -523,7 +523,7 @@ PERC = """
 guide("percolator","How to make stovetop percolator coffee","A simple stovetop percolator method: coarse grind, medium heat then low, a 4 to 8 minute perk, and how to fix coffee that tastes bitter, weak or muddy.","Coarse grind, medium heat, then low. Here's how to get a hot, hearty pot without boiling it into bitterness.",PERC)
 
 MOKA = """
-    <p>A moka pot is the small aluminum or steel pot with an octagon shape that sits on every Italian stove. Water heats in the bottom, steam pressure pushes it up through a basket of coffee, and finished coffee collects in the top. It makes a strong, concentrated cup. It isn't true espresso, because the pressure is much lower than an espresso machine's, but it's a great way to get close at home for the price of a pot.</p>
+    <p>A moka pot is the small stovetop coffee maker that sits on every Italian stove. The classic Bialetti Moka Express is aluminum and octagonal; newer models like the stainless-steel Musa and Venus are cylindrical and work on induction. Whatever the shape, the mechanics are the same: water heats in the bottom, steam pressure pushes it up through a basket of coffee, and finished coffee collects in the top. It makes a strong, concentrated cup. It isn't true espresso, because the pressure is much lower than an espresso machine's, but it's a great way to get close at home for the price of a pot.</p>
 
     <h2>What you need</h2>
     <ul>
