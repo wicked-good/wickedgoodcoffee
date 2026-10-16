@@ -7,6 +7,28 @@ OG="https://wickedgoodcoffee.com/assets/og-image.jpg"
 PUBDATE="2026-10-06"
 SP=HERE
 
+HERO_ALT={
+ "no-six-depot":"The round No. Six Depot logo in white on black: roastery, cafe, store and gallery, 6 Depot St, West Stockbridge, Mass.",
+ "george-howell-godfrey":"The George Howell Coffee storefront and hanging sign at the Godfrey Hotel in Boston.",
+ "speckled-ax":"A wooden Speckled Ax sign reading wood roasted goodness, with a small axe-in-stump cutout.",
+ "vermont-artisan":"A bag of Vermont Artisan Coffee & Tea Guatemalan whole bean coffee on a shelf.",
+ "brio-coffeeworks":"The red metal building and glass garage door of Brio Coffeeworks in Burlington.",
+ "french-press":"A chrome-collared Bodum Original french press on a marble counter, grounds steeping inside the glass.",
+ "moka-pot":"A stainless steel Bialetti moka pot sitting on an induction cooktop.",
+}
+def hero_fig(slug):
+    f=f"assets/{slug}/hero.webp"
+    if not os.path.exists(R+f): return ""
+    try:
+        from PIL import Image
+        w,h=Image.open(R+f).size
+    except Exception:
+        return ""
+    mw=min(w,460 if h>w else 700)
+    return f'''    <figure class="photo hero-photo" style="max-width:{mw}px">
+      <img src="/{f}" width="{w}" height="{h}" alt="{HERO_ALT.get(slug,"")}">
+    </figure>'''
+
 def head(title,desc,path,extra="",noindex=False,otype="website",ogtitle=None):
     url="https://wickedgoodcoffee.com"+path
     robots='<meta name="robots" content="noindex">' if noindex else f'<link rel="canonical" href="{url}">'
@@ -421,7 +443,8 @@ FP_ART = """<article class="article">
   </div>
 </article>"""
 fld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to make french press coffee at home","datePublished":"2026-10-06","dateModified":"2026-10-06","author":{"@type":"Organization","name":"Wicked Good Coffee"},"image":"'+OG+'","publisher":{"@type":"Organization","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/"},"mainEntityOfPage":"https://wickedgoodcoffee.com/guides/french-press/"}</script>'
-fp=head("How to make french press coffee at home | Wicked Good Coffee","A simple french press method: the 1:15 ratio, a coarse grind, 4 minute steep, how to press, and how to fix coffee that tastes muddy, bitter or weak.","/guides/french-press/",fld,otype="article",ogtitle="How to make french press coffee at home")+header("guides")+'\n<main id="main">\n'+FP_ART+'\n</main>\n'+signup("Get a roaster worth knowing in your inbox every week.","One roaster or café, one brewing tip, and what's new in coffee. Free.")+FOOT
+fp_art=FP_ART.replace('</header>','</header>\n'+hero_fig('french-press'),1)
+fp=head("How to make french press coffee at home | Wicked Good Coffee","A simple french press method: the 1:15 ratio, a coarse grind, 4 minute steep, how to press, and how to fix coffee that tastes muddy, bitter or weak.","/guides/french-press/",fld,otype="article",ogtitle="How to make french press coffee at home")+header("guides")+'\n<main id="main">\n'+fp_art+'\n</main>\n'+signup("Get a roaster worth knowing in your inbox every week.","One roaster or café, one brewing tip, and what's new in coffee. Free.")+FOOT
 w("guides/french-press/index.html",fp)
 
 
@@ -429,6 +452,7 @@ def guide(slug,title,desc,deck,body,ogdesc=None):
     ld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"'+title+'","datePublished":"'+PUBDATE+'","dateModified":"'+PUBDATE+'","author":{"@type":"Organization","name":"Wicked Good Coffee"},"image":"'+OG+'","publisher":{"@type":"Organization","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/"},"mainEntityOfPage":"https://wickedgoodcoffee.com/guides/'+slug+'/"}</script>'
     # mark the first <p> in body as the lead
     body2 = re.sub(r'(\s*)<p>', r'\1<p class="lead">', body, count=1)
+    hero = hero_fig(slug)
     art=f'''<article class="article">
   <div class="wrap">
     <header>
@@ -436,6 +460,7 @@ def guide(slug,title,desc,deck,body,ogdesc=None):
       <h1>{title}</h1>
       <p class="deck">{deck}</p>
     </header>
+{hero}
 {body2}
   </div>
 </article>'''
@@ -551,26 +576,6 @@ MOKA = """
 """
 guide("moka-pot","How to make coffee in a moka pot","A simple moka pot method: fine grind, level basket, water to the valve, medium heat, and when to pull it off. Plus fixes for bitter or weak coffee.","The Italian stovetop pot. Fill it right, keep the heat at medium, and pull it off at the first gurgle.",MOKA)
 
-
-HERO_ALT={
- "no-six-depot":"The round No. Six Depot logo in white on black: roastery, cafe, store and gallery, 6 Depot St, West Stockbridge, Mass.",
- "george-howell-godfrey":"The George Howell Coffee storefront and hanging sign at the Godfrey Hotel in Boston.",
- "speckled-ax":"A wooden Speckled Ax sign reading wood roasted goodness, with a small axe-in-stump cutout.",
- "vermont-artisan":"A bag of Vermont Artisan Coffee & Tea Guatemalan whole bean coffee on a shelf.",
- "brio-coffeeworks":"The red metal building and glass garage door of Brio Coffeeworks in Burlington.",
-}
-def hero_fig(slug):
-    f=f"assets/{slug}/hero.webp"
-    if not os.path.exists(R+f): return ""
-    try:
-        from PIL import Image
-        w,h=Image.open(R+f).size
-    except Exception:
-        return ""
-    mw=min(w,460 if h>w else 700)
-    return f'''    <figure class="photo hero-photo" style="max-width:{mw}px">
-      <img src="/{f}" width="{w}" height="{h}" alt="{HERO_ALT.get(slug,"")}">
-    </figure>'''
 
 PLACE_LOG=[]
 def place(section,slug,title,desc,deck,body,kicker,cur):
