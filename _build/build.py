@@ -14,7 +14,7 @@ HERO_ALT={
  "vermont-artisan":"A bag of Vermont Artisan Coffee & Tea Guatemalan whole bean coffee on a shelf.",
  "brio-coffeeworks":"The red metal building and glass garage door of Brio Coffeeworks in Burlington.",
  "french-press":"A chrome-collared Bodum Original french press on a marble counter, grounds steeping inside the glass.",
- "moka-pot":"A stainless steel Bialetti moka pot sitting on an induction cooktop.",
+ "moka-pot":"A stainless steel Bialetti moka pot sitting on a glass-top electric stove.",
 }
 def hero_fig(slug):
     f=f"assets/{slug}/hero.webp"
