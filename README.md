@@ -5,8 +5,8 @@ Static site for wickedgoodcoffee.com. Plain HTML and CSS, no build step.
 ## Editorial rules (apply to every new page and email)
 
 - Measurements always give both units: grams with ounces in parentheses, water in grams with fluid ounces, temperatures in Fahrenheit.
-- No first-person taste claims. Nothing says someone tasted, drank, or visited unless that actually happened. Recommendations are researched and say what they are based on.
-- The About page says content is a mix of research, personal visits, and reader contributions, and every page states its basis. Never claim a visit, tasting, or experience that didn't happen. A page says it reflects a visit only when Glenn actually went.
+- Voice: the site covers the whole experience of a place (the smell of the roaster, the room, the people, the town), not only the coffee. Saying a place is a great hangout, or that the roasting smelled amazing, is on brand when it comes from Glenn's own visit or a labeled reader contribution.
+- Basis: every page states its basis (researched from published sources, a visit by Glenn, or a reader contribution). Never claim a visit, tasting, or experience that didn't happen. A page reflects a visit only when Glenn actually went, and first-hand impressions go only on pages with a visit or a labeled reader contribution. Researched pages describe atmosphere only from cited sources.
 - Never use em dashes (the long dash) in copy, on the site or in emails. Use commas, periods, colons, or parentheses.
 - Byline, when one is needed: "Glenn, a wicked pissah guy" (first name only).
 - Brand: espresso #2A1811, roasted wood #6B371F, cream #F4E8D2, gold #B88746 (decorative only), iron #1C1A18. Libre Baskerville headlines, Lora body.
@@ -17,7 +17,7 @@ Reviews arrive at info@wickedgoodcoffee.com. Publish only ones that follow the r
 
 ## Contributions
 
-/contribute/ takes reader reviews, place tips, brewing tips, and coffee stories by email to info@wickedgoodcoffee.com. Reviews follow the rules above. Place tips and brewing tips are verified against other sources before use, and the contributor is thanked by the first name and town they gave (or anonymously). Never publish a contributor's email. List credited contributors in the Contributors section of /contribute/.
+/contribute/ takes reader reviews, full visit packages (photos, an owner or manager interview, and impressions), place tips, brewing tips, and coffee stories by email to info@wickedgoodcoffee.com. Visit packages need photos the sender took or has rights to, and an interview only where the person agreed it may be published. Credit photographers and interviewees as given. Never publish a contributor's email. Reviews follow the rules above. Place tips and brewing tips are verified against other sources before use, and the contributor is thanked by the first name and town they gave (or anonymously). Never publish a contributor's email. List credited contributors in the Contributors section of /contribute/.
 
 ## Building the site
 

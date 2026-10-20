@@ -331,12 +331,12 @@ ab=head("About | Wicked Good Coffee","Wicked Good Coffee is a coffee guide from 
       <p>Brew guides for making better coffee at home. Profiles of roasters and cafés worth knowing, each with an address and a map link. Reader reviews from people who've been. And a weekly email that pulls it together.</p>
 
       <h2>Where the content comes from</h2>
-      <p>What you read here is a mix of research, personal visits, and reader contributions. Each page says which. Most profiles are researched from published sources, roaster and café websites, and public reviews. Where Glenn has been, or a reader has weighed in, the page says that too.</p>
+      <p>Coffee is more than what's in the cup. It's the smell of a roaster at work, a room you want to stay in, the people behind the counter, and the town around it. This site covers all of it. What you read here is a mix of research, personal visits, and reader contributions, and each page says which. Most profiles are researched from published sources, business websites, and public reviews. Where Glenn has been, or a reader has weighed in, the page says that too, and first-hand impressions of a place, like how it feels or smells, appear only where someone was actually there.</p>
       <p>When something can't be confirmed, such as hours, a menu, or whether a place is still open, the page says so. Check before you drive an hour. Glenn reviews everything and decides what gets published.</p>
       <p>Nobody here accepts free product in exchange for a good word. If that ever changes, it will be stated plainly on the page it affects.</p>
 
       <h2>Written with readers</h2>
-      <p>This guide gets better when readers add to it. Review a place, recommend one we've missed, or share a brewing tip. <a href="/contribute/">Here's how to contribute</a>. Contributors are thanked by name, or anonymously if they prefer.</p>
+      <p>This guide gets better when readers add to it. Review a place, send photos and an interview from a visit, recommend one we've missed, or share a brewing tip. <a href="/contribute/">Here's how to contribute</a>. Contributors are thanked by name, or anonymously if they prefer.</p>
 
       <h2>The email</h2>
       <p>One email a week: a roaster or café worth knowing, a brewing tip, and what's new. It's free. <a href="{SUB}">Subscribe here</a>.</p>
@@ -708,15 +708,15 @@ def build_home():
           <div class="tile-body"><p class="meta">Brewing tip: {tn}</p><h3>One thing to try</h3><p>{_h.escape(tt)}</p><p class="more">Read the guide</p></div>
         </a>'''
     methods="".join(f'<li><a href="/guides/{g}/"><strong>{n}</strong><span>{t}</span></a></li>' for n,g,t in METHODS)
-    ld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/","description":"Coffee guides: brewing at home, roasters and cafés worth knowing, from New England and beyond."}</script>'
-    home=head("Wicked Good Coffee: coffee worth talking about","Brewing guides, roasters and cafés worth knowing, from New England and everywhere else. From Glenn.","/",ld)+header()+f'''
+    ld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Wicked Good Coffee","url":"https://wickedgoodcoffee.com/","description":"Roasters and cafés worth the trip, the coffee and the place together, plus brewing guides, from New England and beyond."}</script>'
+    home=head("Wicked Good Coffee: coffee worth talking about","Roasters and cafés worth the trip, the coffee and the place together, plus brewing guides. New England and everywhere else. From Glenn.","/",ld)+header()+f'''
 <main id="main">
   <section class="hero compact">
     <div class="wrap hero-grid">
       <img class="sign" src="/assets/sign-600.webp" width="600" height="443" alt="Wicked Good Coffee: a weathered wooden shop sign with a steaming cup, hanging from an iron bracket">
       <div>
         <h1>Coffee worth talking about.</h1>
-        <p class="lede">Guides to brewing better coffee at home, and to the roasters and cafés worth knowing. The name is pure New England. The coffee is from everywhere.</p>
+        <p class="lede">Roasters and cafés worth the trip, for the coffee and for the place: the smell of the roaster, the room, the people, the town around it. Plus guides to brewing better at home. The name is pure New England. The coffee is from everywhere.</p>
         <div class="btn-row"><a class="btn" href="{SUB}">Get the weekly email</a><a class="btn quiet" href="/guides/pour-over/">Start with pour-over</a></div>
       </div>
     </div>
@@ -751,14 +751,14 @@ def build_home():
     <div class="wrap band-grid">
       <div class="band-news on-dark">
         <p class="overline">The weekly</p>
-        <h2>One roaster or café, one tip, free.</h2>
+        <h2>One place worth the trip, one tip, free.</h2>
         <p>Latest issue: <a href="{LATEST_ISSUE[1]}">{LATEST_ISSUE[0]}</a></p>
         <div class="btn-row"><a class="btn" href="{SUB}">Subscribe for free</a></div>
       </div>
       <div class="band-contrib on-dark">
         <p class="overline">Written with readers</p>
         <h2>This guide has contributors</h2>
-        <p>Review a place, point us to one we've missed, or share a brewing tip. Contributors get a thank-you by name, or anonymously.</p>
+        <p>Been somewhere great? Tell us what it was like, send photos, or share an interview with the owner. Contributors get a thank-you by name, or anonymously.</p>
         <div class="btn-row"><a class="btn" href="/contribute/">See how to contribute</a></div>
       </div>
     </div>
@@ -852,6 +852,8 @@ What you ordered or bought:
 
 What you liked, or didn't:
 
+What the place felt like (the room, the smell, the crowd, the neighborhood):
+
 Would you go back?
 
 Name to show (first name and town, or anonymous):
@@ -861,7 +863,7 @@ I visited this place myself, I wasn't paid or given anything for this review, an
     <h2>The rules</h2>
     <ul>
       <li><strong>It's free.</strong> There's no cost to send a review and no payment for publishing one. We don't pay for reviews, and we don't trade free coffee for them.</li>
-      <li><strong>Real visits only.</strong> Write about coffee you actually bought or drank. If you own, work for, or compete with the place, say so, or don't review it.</li>
+      <li><strong>Real visits only.</strong> Write about a place you actually went to and what you actually bought or drank. The atmosphere counts: say what the room felt like, how it smelled, who was there. If you own, work for, or compete with the place, say so, or don't review it.</li>
       <li><strong>Good or bad.</strong> We publish critical reviews alongside the glowing ones, as long as they're honest and fair.</li>
       <li><strong>What we won't publish.</strong> Personal attacks, hate, accusations we can't stand behind, spam, and anything that reads like an ad.</li>
       <li><strong>Light edits only.</strong> We may fix typos or trim for length. We won't change what you said.</li>
@@ -881,6 +883,7 @@ def _mailto(subj,body):
     return "mailto:info@wickedgoodcoffee.com?subject="+urllib.parse.quote(subj)+"&body="+urllib.parse.quote(body)
 TIP_PLACE=_mailto("Place tip: ","Name of the roaster or cafe:\n\nStreet address and town (helps us put a map pin on it):\n\nWebsite, if you know it:\n\nWhy it's worth a stop:\n\nName to credit (first name and town, or anonymous):\n\nYou can use this tip, and I'm not connected to this business (or I've said how I am).")
 TIP_BREW=_mailto("Brewing tip: ","What method or tool is this for?\n\nYour tip, ratio, or fix:\n\nWhat problem does it solve?\n\nName to credit (first name and town, or anonymous):\n\nYou can use this tip.")
+TIP_VISIT=_mailto("Visit package: ","Place (name and town):\n\nStreet address and website:\n\nDate I visited:\n\nWhat it felt like (the room, the smell, the crowd, the neighborhood):\n\nWhat I ordered:\n\nInterview: name and role of the person, date, and a transcript or notes (attached or pasted):\n\nPhotos attached (with a caption for each):\n\nName to credit (first name and town, or anonymous):\n\nI visited this place myself, I took these photos or have permission to share them, the person I interviewed knows it may be published, and you can publish it.")
 TIP_STORY=_mailto("Coffee story: ","Your story (a few short paragraphs is plenty):\n\nPlace or person it's about, if any:\n\nStreet address, if the story has one:\n\nName to show (first name and town, or anonymous):\n\nThis is a true story, and you can publish it.")
 CONTRIB = """
     <p class="lead">The best coffee advice comes from people who drink a lot of coffee. This guide gets better with every reader who adds to it. Pick a way to pitch in.</p>
@@ -888,6 +891,17 @@ CONTRIB = """
     <h2>Review a place</h2>
     <p>Been to a roaster or café we cover, or one we haven't found yet? Send a short, honest review. Good or critical, as long as it's fair and from a real visit.</p>
     <div class="btn-row"><a class="btn" href="/reviews/">Write a review</a></div>
+
+    <h2>Send a full visit package</h2>
+    <p>The best contributions show what a place is really like. If you visited, send photos and, if you can, an interview with the owner or manager. We'll build it into a profile or a feature, and credit you.</p>
+    <p>What to send:</p>
+    <ul>
+      <li><strong>Photos.</strong> Take them yourself or have permission from whoever did. Include the storefront, the room, the coffee, and the roasting or bar if you can. Send full-size files, with a short caption for each. Please don't send photos where a person can be identified unless they agreed.</li>
+      <li><strong>An interview, if you have one.</strong> A transcript or notes from a conversation with the owner, manager, or roaster. Tell us the date, the person's name and role, and that they know it may be published. Keep it in their own words, with the questions and answers as they happened.</li>
+      <li><strong>Your own impressions.</strong> What the place felt like, how it smelled, who was there, what you ordered. Honest and specific beats glowing.</li>
+      <li><strong>The basics.</strong> Name, street address, website, and the day you visited. We only use hours as the business posts them, so send them from its own site or door sign, with the date.</li>
+    </ul>
+    <div class="btn-row"><a class="btn" href='""" + TIP_VISIT + """'>Send a visit package</a></div>
 
     <h2>Recommend a place</h2>
     <p>Know a roaster or café we should cover? Tell us its name, its street address, and why it's worth a stop. The address helps us put a map pin on it. If it fits, we'll research it, write it up, and thank you for the tip.</p>
@@ -898,7 +912,7 @@ CONTRIB = """
     <div class="btn-row"><a class="btn" href='""" + TIP_BREW + """'>Share a tip</a></div>
 
     <h2>Tell a coffee story</h2>
-    <p>A diner you almost drove past, a roaster that changed how you drink coffee, a morning you remember. Short and true.</p>
+    <p>A diner you almost drove past, a roaster that changed how you drink coffee, a morning you remember. Short and true. Smells, sounds, and the people count.</p>
     <div class="btn-row"><a class="btn" href='""" + TIP_STORY + """'>Tell a story</a></div>
 
     <p>If a button doesn't open your email, send it to <strong>info@wickedgoodcoffee.com</strong> and tell us which kind of contribution it is.</p>
@@ -906,7 +920,8 @@ CONTRIB = """
     <h2>Ground rules</h2>
     <ul>
       <li><strong>It's free.</strong> There's no cost to contribute and no payment for publishing. We don't pay for reviews or tips, and we don't trade free coffee for them.</li>
-      <li><strong>Keep it real.</strong> Write about things you actually know or did. If you own, work for, or compete with a place, say so.</li>
+      <li><strong>Keep it real.</strong> Write about things you actually know or did. Atmosphere and impressions are welcome, as long as you were there. If you own, work for, or compete with a place, say so.</li>
+      <li><strong>Photos and interviews need permission.</strong> Send only photos you took or have the right to share, and interviews the person agreed could be published. You keep your copyright, and you let us use them on this site and in the newsletter with a credit.</li>
       <li><strong>Addresses help.</strong> For a place recommendation or review, a street address lets us drop a map pin that opens correctly in Google and Apple Maps. If you don't have it, send what you have.</li>
       <li><strong>Credit is yours to choose.</strong> We thank you by the first name and town you give us, or anonymously. We never publish your email address.</li>
       <li><strong>We check before we publish.</strong> Place tips and brewing tips get verified against other sources. We may edit for length and clarity, and we won't change what you meant.</li>
@@ -917,5 +932,5 @@ CONTRIB = """
     <h2>Contributors</h2>
     <p class="note">No contributors listed yet. Yours could be the first name here.</p>
 """
-html=head("Contribute | Wicked Good Coffee","Review a place, recommend a roaster or cafe, share a brewing tip, or tell a coffee story. It's free, and contributors are thanked by name.","/contribute/")+header("contribute")+'\n<main id="main">\n<article class="article">\n  <div class="wrap">\n    <header>\n      <h1>Contribute</h1>\n      <p class="deck">This guide has contributors. Here are four ways to be one.</p>\n    </header>\n'+CONTRIB+'  </div>\n</article>\n</main>\n'+signup()+FOOT
+html=head("Contribute | Wicked Good Coffee","Review a place, send photos and an interview from a visit, recommend a roaster or cafe, share a brewing tip, or tell a coffee story. It's free, and contributors are thanked by name.","/contribute/")+header("contribute")+'\n<main id="main">\n<article class="article">\n  <div class="wrap">\n    <header>\n      <h1>Contribute</h1>\n      <p class="deck">This guide has contributors. Here are five ways to be one.</p>\n    </header>\n'+CONTRIB+'  </div>\n</article>\n</main>\n'+signup()+FOOT
 w("contribute/index.html",html)
