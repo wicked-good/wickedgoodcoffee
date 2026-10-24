@@ -675,7 +675,7 @@ TIPS=[
  ("Percolator","percolator","Use about 10 g (0.35 oz) of coarse coffee per 240 g (8 fl oz) of water, and turn the heat to low once it starts perking."),
  ("Grind size","grind-size","If a cup tastes sour or thin, grind finer. If it tastes bitter or harsh, grind coarser. Change one thing at a time."),
 ]
-FEATURED="dueling-rabbits"
+FEATURED="subculture-coffee"
 def build_home():
     rows={}
     for sl,m,t,b in EXTRA_R+EXTRA_S:
