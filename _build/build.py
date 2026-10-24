@@ -13,6 +13,7 @@ HERO_ALT={
  "speckled-ax":"A wooden Speckled Ax sign reading wood roasted goodness, with a small axe-in-stump cutout.",
  "vermont-artisan":"A bag of Vermont Artisan Coffee & Tea Guatemalan whole bean coffee on a shelf.",
  "brio-coffeeworks":"The red metal building and glass garage door of Brio Coffeeworks in Burlington.",
+ "subculture-coffee":"A white Subculture Coffee Roasters espresso cup with a red rim, on a matching saucer with a spoon, on a dark table in a busy cafe.",
  "french-press":"A chrome-collared Bodum Original french press on a marble counter, grounds steeping inside the glass.",
  "moka-pot":"A stainless steel Bialetti moka pot sitting on a glass-top electric stove.",
 }
@@ -190,6 +191,10 @@ PLACES = {
   ]},
   "no-six-depot": {"name":"No. Six Depot Roastery & Cafe", "visitable":True, "addr":[
     {"label":"Cafe, gallery, and roastery, in the old train station", "street":"6 Depot Street", "city":"West Stockbridge", "region":"MA", "postal":"01266"}
+  ]},
+  "subculture-coffee": {"name":"Subculture Coffee Roasters", "visitable":True, "addr":[
+    {"label":"West Palm Beach, Clematis Street", "street":"509 Clematis Street", "city":"West Palm Beach", "region":"FL", "postal":"33401"},
+    {"label":"Delray Beach, NE 6th Avenue", "street":"302 NE 6th Avenue", "city":"Delray Beach", "region":"FL", "postal":"33444"}
   ]},
   # cafés
   "tandem": {"name":"Tandem Coffee Roasters", "visitable":True, "addr":[

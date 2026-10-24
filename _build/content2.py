@@ -858,3 +858,48 @@ SIPHON = """
     <p class="note">This guide describes a widely used starting method, not a single correct way. Pots, burners, filters, and beans all vary, and published guides differ on grind and timing, so treat the numbers as a starting point and adjust to your taste. Based on published siphon guides, including <a href="https://prima-coffee.com/blog/siphon-brewing-guide/">Prima Coffee</a>, <a href="https://texascoffeeschool.com/the-texas-coffee-school-guide-to-brewing-coffee-with-a-vacuum-siphon-pot-also-known-as-a-vacpot/">Texas Coffee School</a>, <a href="https://library.sweetmarias.com/wp-content/uploads/2020/08/Vaccum-Coffee-Brewing-Tip-Sheet.pdf">Sweet Maria's</a>, and <a href="https://www.homegrounds.co/how-to-use-a-siphon-coffee-maker/">Home Grounds</a>.</p>
 """
 guide("siphon","How to make siphon coffee at home","A simple siphon (vacuum pot) method: 25 g of coffee to 375 g of water, about 200 to 202°F, a 1 to 1.5 minute steep, a 1 minute drawdown, plus fixes and safety basics.","Hot water rises, the coffee steeps, the heat comes off, and the brew drops back down. Here's the method, the timing, and the safety basics.",SIPHON)
+
+
+# ---------------- SUBCULTURE COFFEE ROASTERS ----------------
+# From Glenn's visits to the West Palm Beach and Delray Beach shops (dates not
+# recorded; his West Palm photo's metadata reads January 2022), plus the company's
+# own site and local press, researched October 24, 2026. The site posts no hours.
+SC = """
+    <p>Subculture Coffee Roasters is a South Florida roaster with shops from Boca Raton to Jupiter, built around a simple idea: every location should feel like its own place. Glenn has been to two of them, the original on Clematis Street in West Palm Beach and the one in Delray Beach, and says each has its own feel and size, with an eclectic spirit running through both.</p>
+
+    <div class="recipe">
+      <h2>The short version</h2>
+      <dl>
+        <dt>Where</dt><dd>Six shops, per its site: West Palm Beach (509 Clematis Street), Delray Beach (302 NE 6th Avenue), Boca Raton (437 Plaza Real), Jupiter (107 Front Street), Palm Beach Gardens (11701 Lake Victoria Gardens Avenue) and Lake Worth Beach (522 Lucerne Avenue)</dd>
+        <dt>Founders</dt><dd>Restaurateur Rodney Mayo and coffee roaster Sean Scott, per the Broward Palm Beach New Times</dd>
+        <dt>Roasting</dt><dd>Small batches, roasted in-house daily, single origins and espresso blends, per its site</dd>
+        <dt>Hours</dt><dd>Not posted on the pages we checked. Check the site or call before you go.</dd>
+        <dt>Also</dt><dd>Coffee Club subscription, online orders and wholesale, per its site</dd>
+      </dl>
+    </div>
+
+    <figure class="photo">
+      <img src="/assets/subculture-coffee/hero.webp" width="768" height="1024" alt="A white Subculture Coffee Roasters espresso cup with a red rim, on a matching saucer with a spoon, on a dark table in a busy cafe.">
+      <figcaption>A Subculture cup on a dark table in the West Palm Beach shop. Photo by Glenn.</figcaption>
+    </figure>
+
+    <h2>The place</h2>
+    <p>The company's site says each location has its own design theme, and Glenn's visits bear that out. The West Palm Beach and Delray Beach shops differ in feel and in size, but both come across as eclectic and keen on environmentally friendly messaging. The company's own site says only that its coffee is "ethically sourced," without details, so we can't point to a specific sustainability program behind that impression.</p>
+    <p>West Palm Beach is the original. Per the New Times, it opened on Clematis Street as a dark, spacious cafe with black-and-white photos of coffee drinkers on the walls and a hand-built wooden coffee bar. Palm Beach Illustrated, in a Best Artisan Coffee award write-up, describes it as an urban gathering place with a roaster displayed at the entrance.</p>
+    <p>The Delray Beach shop is on NE 6th Avenue, in a building Glenn describes as a former car repair shop. The Miami New Times calls the site a former gas station, so we haven't settled exactly what it was. Per WPTV, the shop opened in 2024.</p>
+    <p>Per a 2022 OnGardens report, owner Rodney Mayo has said he wants to bring back the 1950s beatnik coffeehouse, a neighborhood place for talking politics. The same report describes the Palm Beach Gardens shop as two stories, with murals inspired by <em>The Man Who Fell to Earth</em>, a brass eyeball and a brass rocket ship.</p>
+
+    <h2>The coffee</h2>
+    <p>Per its site, Subculture roasts in small batches in-house daily and buys from small-batch farms around the world, with offerings that change through the year because coffee is seasonal. Per the New Times, the original shop uses an American-made Diedrich roaster. Per OnGardens, Mayo said beans rest for three to four days after roasting, are best served about two weeks after roasting, and are thrown out after 30 days. That report is from 2022, so roasting arrangements may have changed.</p>
+    <p>The shops also serve food and baked goods, with an emphasis on vegan and homemade cakes, per its site.</p>
+
+    <h2>Recognition</h2>
+    <p>Per Palm Beach Illustrated, Subculture won its Best Artisan Coffee award. The write-up doesn't give a year. A Palm Beach Post reader poll ranked it first for coffee in the Palm Beaches, according to a Waterfront Properties blog post. We haven't seen the poll itself.</p>
+
+    <h2>Before you go</h2>
+    <p>The Delray Beach shop has been in a dispute with the city. Per CBS12 and WPTV, on March 31, 2026 the Delray Beach City Commission gave owner Rodney Mayo 90 days to present a parking plan, after the city said a shop of its size needs 44 off-street spaces and it has eight. The city also raised permits for events such as live music and poetry nights. Mayo told WPTV that the requirements could push him out of Delray Beach. Per The Palm Beach (August 2026), the city later canceled a vote that could have revoked the shop's parking agreement. We haven't found a report that the shop has closed or moved, but check before a special trip.</p>
+    <p>The West Palm Beach shop has been open throughout, as far as we found.</p>
+"""
+SC+=_note("This profile combines Glenn's visits to the West Palm Beach and Delray Beach shops with published sources, researched October 24, 2026. Hours, menus and the Delray Beach situation change, so check before you go.",[("Subculture Coffee Roasters","https://www.subculturecoffee.com"),("Broward Palm Beach New Times, on the West Palm Beach opening","https://www.browardpalmbeach.com/?p=40596862"),("Palm Beach Illustrated","https://www.palmbeachillustrated.com/pbi-awards-best-artisan-coffee/"),("OnGardens, 2022","https://ongardens.org/2022/10/03/something-funky-brewing-in-palm-beach-gardens-as-subculture-coffee-opens/"),("WPTV, March 31, 2026","https://www.wptv.com/news/region-s-palm-beach-county/delray-beach/delray-beach-gives-subculture-coffee-90-days-to-resolve-parking-overflow-issues-or-risk-a-relocation"),("CBS12, March 31, 2026","https://cbs12.com/news/local/subculture-coffee-delray-beach-city-commission-south-florida-palm-beach-county-news-coffee-shop-dispute-brewing-in-delray-beach-44-off-street-parking-spaces"),("Miami New Times","https://www.miaminewtimes.com/food-drink/delray-residents-launch-petition-to-save-beloved-coffee-shop-40530349delray-residents-launch-petition-to-save-beloved-coffee-shop-40530349/"),("The Palm Beach, August 2026","https://thepalmbeach.org/news/delray-beach-cancels-vote-that-could-have-revoked-subculture-coffee-parking-agreement")])
+place("roasters","subculture-coffee","Subculture Coffee Roasters in West Palm Beach and Delray Beach, Florida","Subculture Coffee Roasters is a South Florida roaster whose shops each have their own feel. Locations, what to expect, and what to know before you go.","A South Florida roaster with six shops that each feel different, from its original on Clematis Street to a converted auto site in Delray Beach.",SC,"Roaster profile, Florida, October 2026","roasters")
+EXTRA_R.append(("subculture-coffee","West Palm Beach and Delray Beach, Florida","Subculture Coffee Roasters","A South Florida roaster with six shops that each have their own look and feel."))
