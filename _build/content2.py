@@ -902,3 +902,77 @@ SC = """
 SC+=_note("This profile combines Glenn's visits to the West Palm Beach and Delray Beach shops with published sources, researched October 24, 2026. Hours and menus change, so check before you go.",[("Subculture Coffee Roasters","https://www.subculturecoffee.com"),("Broward Palm Beach New Times, on the West Palm Beach opening","https://www.browardpalmbeach.com/?p=40596862"),("Palm Beach Illustrated","https://www.palmbeachillustrated.com/pbi-awards-best-artisan-coffee/"),("OnGardens, 2022","https://ongardens.org/2022/10/03/something-funky-brewing-in-palm-beach-gardens-as-subculture-coffee-opens/")])
 place("roasters","subculture-coffee","Subculture Coffee Roasters in West Palm Beach and Delray Beach, Florida","Subculture Coffee Roasters is a South Florida roaster whose shops each have their own feel. Locations, what to expect, and what to know before you go.","A South Florida roaster with six shops that each feel different, from its original on Clematis Street to a converted auto site in Delray Beach.",SC,"Roaster profile, Florida, October 2026","roasters")
 EXTRA_R.append(("subculture-coffee","West Palm Beach and Delray Beach, Florida","Subculture Coffee Roasters","A South Florida roaster with six shops that each have their own look and feel."))
+
+
+# ---------------- SUBCULTURE DELRAY ----------------
+# From Glenn's visit to the Delray Beach shop (date not recorded) and his photos
+# of the building, room, menu board and parking signs, plus local press, researched
+# October 25, 2026. The company's site posts no hours.
+SDL = """
+    <p>Subculture's Delray Beach shop is not a coffee geek's destination. The menu board isn't about a carefully curated list of origins. It's a neighborhood meeting place that uses coffee as the draw, and the room is as much a part of the visit as the cup. If you want the opposite approach, a single-origin roaster that is all about the beans, see <a href="/roasters/dueling-rabbits/">Dueling Rabbits</a> in Wilmington. This is the other kind of coffee shop, and it's worth knowing too.</p>
+
+    <div class="recipe">
+      <h2>The short version</h2>
+      <dl>
+        <dt>Where</dt><dd>302 NE 6th Avenue, Delray Beach, FL 33444</dd>
+        <dt>Part of</dt><dd><a href="/roasters/subculture-coffee/">Subculture Coffee Roasters</a>, which has six shops in South Florida</dd>
+        <dt>Hours</dt><dd>Not posted on the company's site. Check before you go.</dd>
+        <dt>Parking</dt><dd>A small lot, which fills up, and street parking on NE 5th and 6th Avenues. The shop posts a map and a request not to park in neighboring businesses' lots.</dd>
+        <dt>Order ahead</dt><dd>Online ordering and delivery to your car, per the shop's sign and site</dd>
+      </dl>
+    </div>
+
+    <figure class="photo">
+      <img src="/assets/subculture-delray/mural.webp" width="768" height="1024" alt="The corner of the Subculture Delray Beach building, painted in large colorful geometric shapes in red, blue, yellow and black, with a red parking sign in front and a glass garage-style door on the side.">
+      <figcaption>The side of the Delray Beach shop, painted in bold geometric shapes. Photo by Glenn.</figcaption>
+    </figure>
+
+    <h2>The place</h2>
+    <p>The building is painted from roofline to ground in bold geometric shapes, in red, blue, yellow, orange and black. Glenn describes it as a former car repair shop. The Miami New Times calls the site a former gas station on Federal Highway, so we haven't pinned down exactly what it was.</p>
+    <p>Inside, Glenn's photos show a steel-trussed ceiling with orange ductwork, stage lights, a motorcycle with bat-like wings mounted on the wall, vintage toy cars and a large painted portrait. Seating ranges from wooden tables and chairs to a built-in bench heaped with patterned cushions, over a painted concrete floor. A pastry case sits at the counter, and an orange pole near the entrance was wrapped in a Halloween skull garland when Glenn visited.</p>
+
+    <div class="photo-grid">
+      <figure class="photo">
+        <img src="/assets/subculture-delray/seating.webp" width="768" height="1024" alt="The seating area of the Subculture Delray Beach shop: a patterned cushioned bench along one wall, people talking at wooden tables, a motorcycle with black bat-like wings mounted on the wall, and stage lights under a steel-trussed ceiling.">
+        <figcaption>The seating area, with a motorcycle on the wall and stage lights overhead.</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="/assets/subculture-delray/counter.webp" width="768" height="1024" alt="The counter and pastry case at the Subculture Delray Beach shop, with a wooden counter top, a vintage toy fire truck, a collage-covered wall and a skull garland on an orange pole.">
+        <figcaption>The counter and pastry case.</figcaption>
+      </figure>
+    </div>
+
+    <h2>The coffee and the menu</h2>
+    <p>The chalkboard behind the counter listed two drip coffees on the day Glenn visited: a Colombia and one called Cult Classic. The rest of the board is a different kind of menu from a roaster like Dueling Rabbits. It lists syrup flavors including vanilla, caramel, hazelnut, lavender, pistachio, strawberry, rose, coconut, maple and honey, plus sugar-free vanilla and caramel, mocha and white mocha, and spices such as cinnamon, nutmeg and cardamom. A separate board lists hot teas.</p>
+    <p>Per the company's site, Subculture roasts in small batches in-house and sells locally baked treats, with an emphasis on vegan and homemade cakes. The shop also has plenty of food. For more on the roasting, see the <a href="/roasters/subculture-coffee/">Subculture Coffee Roasters profile</a>.</p>
+
+    <figure class="photo">
+      <img src="/assets/subculture-delray/menu.webp" width="768" height="1024" alt="A chalkboard menu reading Drip Coffee, Colombia and Cult Classic, with a list of syrup flavors and spices, in front of a coffee grinder and a hopper of roasted beans.">
+      <figcaption>The chalkboard menu, in front of the grinder and a hopper of beans.</figcaption>
+    </figure>
+
+    <h2>Parking</h2>
+    <p>Parking is the one real drawback. Glenn found the shop's own lot hit or miss, because it has only a few spots and the place is popular. Street parking is plentiful on NE 5th and 6th Avenues, and the shop is within walking distance of locals and visitors, which is part of what keeps it busy.</p>
+    <p>The shop posts a sign asking customers not to park in any neighboring business's lot, pointing to the street parking on 6th and 5th Avenues, and offering to bring your coffee out to your car if you order online. A hand-drawn map framed near the counter marks the street and lot spaces around the shop and the places not to park, and says 34 spots are available.</p>
+
+    <div class="photo-grid">
+      <figure class="photo">
+        <img src="/assets/subculture-delray/parking-sign.webp" width="768" height="1024" alt="A red and black sign reading Welcome to Subculture Coffee Roasters, asking customers not to park in neighboring businesses and pointing to on-street parking on 6th and 5th Avenue, with a blue Sign the Petition sign leaning below it.">
+        <figcaption>The sign outside, with a "Sign the petition" sign below it.</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="/assets/subculture-delray/parking-map.webp" width="768" height="1024" alt="A hand-drawn, framed map of NE 5th Avenue, NE 6th Avenue and NE 3rd Street, with numbered parking spaces in yellow, do-not-park marks, and the words 34 spots available.">
+        <figcaption>The shop's hand-drawn parking map, framed near the counter.</figcaption>
+      </figure>
+    </div>
+
+    <h2>The city dispute</h2>
+    <p>The petition sign is not a surprise if you've followed local news. Per CBS12 and WPTV, on March 31, 2026 the Delray Beach City Commission voted 5 to 0 to give owner Rodney Mayo 90 days to present a parking plan. The city says a business of the shop's size needs 44 off-street spaces, and the shop has eight. Two nearby businesses have complained about customers parking in their lots. Commissioners also said the shop has grown from the quick grab-and-go coffee place described when it opened, in 2024 per WPTV, into a venue that hosts events such as poetry nights.</p>
+    <p>Mayo has said the city is treating the shop unfairly. Per the Miami New Times, a Change.org petition had more than 1,850 signatures at press time, and the city's code enforcement had cited issues including faded parking striping and an unpermitted concrete pad. Mayo told WPTV that the new requirements could push him out of Delray Beach. Per The Palm Beach (August 2026), the city later canceled a vote that could have revoked the shop's parking agreement. The reason for the cancellation wasn't given. We haven't found a report that the shop has closed or moved, but its future in Delray Beach was unsettled at the time of the latest coverage we found.</p>
+
+    <h2>Before you go</h2>
+    <p>Check the shop's hours and status, since the company's site doesn't post hours and the city dispute is unresolved. Plan to park on the street, or order online and have your coffee brought out. Then go in and look up: the room is the point.</p>
+"""
+SDL+=_note("This profile combines Glenn's visit to the Delray Beach shop and his photos with published sources, researched October 25, 2026. Hours, menus and the shop's situation change, so check before you go.",[("Subculture Coffee Roasters","https://www.subculturecoffee.com"),("CBS12, March 31, 2026","https://cbs12.com/news/local/subculture-coffee-delray-beach-city-commission-south-florida-palm-beach-county-news-coffee-shop-dispute-brewing-in-delray-beach-44-off-street-parking-spaces"),("WPTV, March 31, 2026","https://www.wptv.com/news/region-s-palm-beach-county/delray-beach/delray-beach-gives-subculture-coffee-90-days-to-resolve-parking-overflow-issues-or-risk-a-relocation"),("Miami New Times","https://www.miaminewtimes.com/food-drink/delray-residents-launch-petition-to-save-beloved-coffee-shop-40530349delray-residents-launch-petition-to-save-beloved-coffee-shop-40530349/"),("The Palm Beach, August 2026","https://thepalmbeach.org/news/delray-beach-cancels-vote-that-could-have-revoked-subculture-coffee-parking-agreement")])
+place("coffee-shops","subculture-delray","Subculture Coffee in Delray Beach, Florida","Subculture Coffee's Delray Beach shop is a colorful neighborhood meeting place in a former auto site, with a syrup menu and a parking story. What to know before you go.","A painted former auto shop in Delray Beach where the room, the crowd and the food are as much the draw as the coffee.",SDL,"Coffee shop, Delray Beach, Florida, October 2026","shops")
+EXTRA_S.append(("subculture-delray","Delray Beach, Florida","Subculture Coffee, Delray Beach","A bright, painted former auto shop where the room and the community are as much the draw as the coffee."))
