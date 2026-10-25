@@ -951,11 +951,11 @@ SDL = """
       <figcaption>The chalkboard menu, in front of the grinder and a hopper of beans.</figcaption>
     </figure>
 
-    <p>A digital menu screen near the door, headed "Start," lists the main drinks. Hot drinks run from drip coffee, French press or slow pour, and misto through espresso drinks such as Americano, latte, mocha, cappuccino, flat white, cortado and macchiato, plus tea, chai, matcha and London fog. The cold side has iced coffee, cold brew, iced lattes, iced matcha, affogato and iced tea. The board also lists cold brew cans, singles or six-packs, in black, sweet latte and a THC-infused version marked 21+. A "Fool's Gold" shot of pineapple, lemon, ginger, turmeric and Tellicherry peppercorn and three smoothies (berry, green and breakfast) round it out.</p>
+    <p>A digital menu screen above the ordering area, headed "Start," lists the main drinks. Hot drinks run from drip coffee, French press or slow pour, and misto through espresso drinks such as Americano, latte, mocha, cappuccino, flat white, cortado and macchiato, plus tea, chai, matcha and London fog. The cold side has iced coffee, cold brew, iced lattes, iced matcha, affogato and iced tea. The board also lists cold brew cans, singles or six-packs, in black, sweet latte and a THC-infused version marked 21+. A "Fool's Gold" shot of pineapple, lemon, ginger, turmeric and Tellicherry peppercorn and three smoothies (berry, green and breakfast) round it out.</p>
 
     <figure class="photo">
       <img src="/assets/subculture-delray/menu-board.webp" width="504" height="688" alt="A digital menu screen headed Start, listing hot drinks, cold drinks, cold brew cans, a Fool's Gold shot and smoothies, with Subculture Delray in the bottom corner.">
-      <figcaption>The digital menu screen by the door.</figcaption>
+      <figcaption>The digital menu screen above the ordering area.</figcaption>
     </figure>
 
     <h2>Parking</h2>
