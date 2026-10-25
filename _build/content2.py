@@ -886,7 +886,7 @@ SC = """
     <h2>The place</h2>
     <p>The company's site says each location has its own design theme, and Glenn's visits bear that out. The West Palm Beach and Delray Beach shops differ in feel and in size, but both come across as eclectic and keen on environmentally friendly messaging. The company's own site says only that its coffee is "ethically sourced," without details, so we can't point to a specific sustainability program behind that impression.</p>
     <p>West Palm Beach is the original. Per the New Times, it opened on Clematis Street as a dark, spacious cafe with black-and-white photos of coffee drinkers on the walls and a hand-built wooden coffee bar. Palm Beach Illustrated, in a Best Artisan Coffee award write-up, describes it as an urban gathering place with a roaster displayed at the entrance.</p>
-    <p>The Delray Beach shop is on NE 6th Avenue, in a building Glenn describes as a former car repair shop.</p>
+    <p>The Delray Beach shop is on NE 6th Avenue, in a building Glenn describes as a former car repair shop. It has its own profile: <a href="/coffee-shops/subculture-delray/">Subculture Coffee in Delray Beach</a>.</p>
     <p>Per a 2022 OnGardens report, owner Rodney Mayo has said he wants to bring back the 1950s beatnik coffeehouse, a neighborhood place for talking politics. The same report describes the Palm Beach Gardens shop as two stories, with murals inspired by <em>The Man Who Fell to Earth</em>, a brass eyeball and a brass rocket ship.</p>
 
     <h2>The coffee</h2>
