@@ -997,17 +997,16 @@ STG = """
       <h2>The short version</h2>
       <dl>
         <dt>Where</dt><dd>58 Pondfield Road, Bronxville, NY 10708</dd>
-        <dt>Phone</dt><dd>914-961-7777, as posted on the shop's site</dd>
-        <dt>Hours</dt><dd>The shop's own site lists two different sets of hours, checked October 31, 2026. Its contact page says Sunday 7am to 8pm, Monday to Thursday 6:30am to 7pm, and Friday and Saturday 6:30am to 8pm. Its home page says Sunday 7am to 9pm, Monday to Thursday 6:30am to 8pm, and Friday and Saturday 6:30am to 9pm. The site says to call on holidays. Call to confirm before you go.</dd>
+        <dt>Phone</dt><dd>914-961-7777, per a Bronxville business directory and a Sarah Lawrence student paper</dd>
+        <dt>Hours</dt><dd>Not confirmed. We could not reach the shop's own site, so check with the shop before you go.</dd>
         <dt>Opened</dt><dd>July 3, 1993, per the owner in a 2015 comment on The Dial</dd>
-        <dt>Family</dt><dd>Founded and owned by Carol Marshall, per the shop's site. Per BXV (2020), she opened it with her husband, Andy, a former executive chef who was the face of the shop until his death the year before. Her son Troy was managing it at that time.</dd>
-        <dt>Online</dt><dd><a href="https://www.slavetothegrindcoffeehouse.com">The shop's site</a>, and <a href="https://www.instagram.com/slavetothegrind_official/">Instagram</a> (not reviewed for this profile)</dd>
-        <dt>Photos</dt><dd>Four photos from a reader's visit, below</dd>
+        <dt>Family</dt><dd>Opened by Carol Marshall and her husband, per BXV (2020). Her son Troy was managing it at that time.</dd>
+        <dt>Online</dt><dd><a href="https://www.instagram.com/slavetothegrind_official/">Instagram</a> (not reviewed for this profile)</dd>
       </dl>
     </div>
 
     <h2>The shop</h2>
-    <p>Per BXV (2020), Carol Marshall started the shop after seeing a TV segment on the move toward fresh-roasted coffee, and several relatives have worked there over the years. A Bronxville business directory calls it the first coffee house in Westchester County, and Marshall told Westchester Magazine, "We were the first coffee bar in Westchester when we opened in 1993." We haven't been able to confirm either claim independently.</p>
+    <p>Per BXV (2020), Carol Marshall started the shop after seeing a TV segment on the move toward fresh-roasted coffee, and several relatives have worked there over the years. A Bronxville business directory calls it the first coffee house in Westchester County, which we haven't been able to confirm independently.</p>
 
     <h2>The coffee</h2>
     <p>BXV (2020) reports 68 coffee varieties and a house blend of Sumatra and Colombian beans. A 2015 review in The Dial counted eight serve-yourself brewed coffees, plus lattes, hot chocolate, and tea, and described the shop as a place with plenty of tables for studying or working. A Sarah Lawrence student paper (undated) says it sells fresh beans to take home. None of the sources we found says the shop roasts its own coffee, so we list it as a coffee shop that sells beans, not as a roaster.</p>
@@ -1034,6 +1033,6 @@ STG = """
     <h2>A reader's tip</h2>
     <p>Jeff, a Bronxville reader who told us he has no connection to the business, suggested Slave to the Grind as a neighborhood spot with a long list of coffees and a loyal crowd of regulars. His tip also made several claims that we couldn't confirm from published sources, so they are not repeated here.</p>
 """
-STG+=_note("This profile is researched from published sources, with four photos from a reader's visit. It is not from a visit by Glenn. Hours and menus change, so check before you go. We reviewed the shop's own site for its address, phone and hours, but not its Instagram.",[("Slave to the Grind (the shop's site)","https://www.slavetothegrindcoffeehouse.com/contact-us"),("Westchester Magazine, 25th anniversary","https://westchestermagazine.com/food/bronxvilles-slave-to-the-grind-celebrates-25-years/"),("BXV, Stronger Together (2020)","https://www.myhometownbronxville.com/shopping/6538-spotlight-on-slave-to-the-grind-maison-rouge-continental-109-salon"),("The Dial (2015)","https://hsdial.org/2015/12/17/the-dial-reviews-neighborhood-coffee-shops/"),("Sarah Lawrence Phoenix","https://sarahlawrencephoenix.com/arts-and-culture/2014/10/16/awne0imh54cjg5aphlc9bhx5qo70k1")])
+STG+=_note("This profile is researched from published sources, not from a visit. Hours and menus change, so check before you go. We could not review the business's own site or Instagram, so details from the shop itself are unconfirmed.",[("BXV, Stronger Together (2020)","https://www.myhometownbronxville.com/shopping/6538-spotlight-on-slave-to-the-grind-maison-rouge-continental-109-salon"),("The Dial (2015)","https://hsdial.org/2015/12/17/the-dial-reviews-neighborhood-coffee-shops/"),("Sarah Lawrence Phoenix","https://sarahlawrencephoenix.com/arts-and-culture/2014/10/16/awne0imh54cjg5aphlc9bhx5qo70k1")])
 place("coffee-shops","slave-to-the-grind","Slave to the Grind in Bronxville, New York","Slave to the Grind is a family-run coffee shop on Pondfield Road in Bronxville, New York, open since 1993. Address, what the sources say, and reader photos.","A family-run Bronxville coffee shop on Pondfield Road, open since 1993.",STG,"Coffee shop, Bronxville, New York, October 2026","shops")
 EXTRA_S.append(("slave-to-the-grind","Bronxville, New York","Slave to the Grind","A family-run Bronxville coffee shop on Pondfield Road, open since 1993."))
