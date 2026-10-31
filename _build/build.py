@@ -15,6 +15,7 @@ HERO_ALT={
  "brio-coffeeworks":"The red metal building and glass garage door of Brio Coffeeworks in Burlington.",
  "subculture-coffee":"A white Subculture Coffee Roasters espresso cup with a red rim, on a matching saucer with a spoon, on a dark table in a busy cafe.",
  "subculture-delray":"The Subculture Coffee shop in Delray Beach, a low building painted in bold geometric shapes, with palm trees out front and 302 above the door.",
+ "slave-to-the-grind":"The green awning of Slave to the Grind in Bronxville, with gold old-English lettering, and people at small sidewalk tables under autumn trees.",
  "french-press":"A chrome-collared Bodum Original french press on a marble counter, grounds steeping inside the glass.",
  "moka-pot":"A stainless steel Bialetti moka pot sitting on a glass-top electric stove.",
 }
@@ -200,6 +201,9 @@ PLACES = {
   # cafés
   "subculture-delray": {"name":"Subculture Coffee, Delray Beach", "visitable":True, "addr":[
     {"label":"Delray Beach shop", "street":"302 NE 6th Avenue", "city":"Delray Beach", "region":"FL", "postal":"33444"}
+  ]},
+  "slave-to-the-grind": {"name":"Slave to the Grind", "visitable":True, "addr":[
+    {"label":"Coffee shop on Pondfield Road", "street":"58 Pondfield Road", "city":"Bronxville", "region":"NY", "postal":"10708"}
   ]},
   "tandem": {"name":"Tandem Coffee Roasters", "visitable":True, "addr":[
     {"label":"Café + Roastery", "street":"122 Anderson Street", "city":"Portland", "region":"ME"},

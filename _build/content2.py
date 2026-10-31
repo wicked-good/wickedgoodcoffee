@@ -984,3 +984,55 @@ SDL = """
 SDL+=_note("This profile combines Glenn's visit to the Delray Beach shop and his photos with published sources, researched October 25, 2026. Hours, menus and the shop's situation change, so check before you go.",[("Subculture Coffee Roasters","https://www.subculturecoffee.com"),("CBS12, March 31, 2026","https://cbs12.com/news/local/subculture-coffee-delray-beach-city-commission-south-florida-palm-beach-county-news-coffee-shop-dispute-brewing-in-delray-beach-44-off-street-parking-spaces"),("WPTV, March 31, 2026","https://www.wptv.com/news/region-s-palm-beach-county/delray-beach/delray-beach-gives-subculture-coffee-90-days-to-resolve-parking-overflow-issues-or-risk-a-relocation"),("Miami New Times","https://www.miaminewtimes.com/food-drink/delray-residents-launch-petition-to-save-beloved-coffee-shop-40530349delray-residents-launch-petition-to-save-beloved-coffee-shop-40530349/"),("The Palm Beach, August 2026","https://thepalmbeach.org/news/delray-beach-cancels-vote-that-could-have-revoked-subculture-coffee-parking-agreement")])
 place("coffee-shops","subculture-delray","Subculture Coffee in Delray Beach, Florida","Subculture Coffee's Delray Beach shop is a colorful neighborhood meeting place in a former gas station, with a syrup menu and a parking story. What to know before you go.","A painted former gas station in Delray Beach where the place, the crowd and the food are as much the draw as the coffee.",SDL,"Coffee shop, Delray Beach, Florida, October 2026","shops")
 EXTRA_S.append(("subculture-delray","Delray Beach, Florida","Subculture Coffee, Delray Beach","A bright, painted former gas station where the place and the community are as much the draw as the coffee."))
+
+
+# ---------------- SLAVE TO THE GRIND ----------------
+# Researched from published sources (BXV 2020, The Dial 2015, Sarah Lawrence Phoenix),
+# plus four photos from a Bronxville reader, Jeff (credited). Not a visit by Glenn.
+# The shop's own site could not be reached, so hours and menu are unconfirmed.
+STG = """
+    <p>Slave to the Grind is a family-run coffee shop at 58 Pondfield Road in the center of Bronxville, in Westchester County, New York. It has been serving coffee there since 1993, according to local press, and it was suggested to us by a reader.</p>
+
+    <div class="recipe">
+      <h2>The short version</h2>
+      <dl>
+        <dt>Where</dt><dd>58 Pondfield Road, Bronxville, NY 10708</dd>
+        <dt>Phone</dt><dd>914-961-7777, per a Bronxville business directory and a Sarah Lawrence student paper</dd>
+        <dt>Hours</dt><dd>Not confirmed. We could not reach the shop's own site, so check with the shop before you go.</dd>
+        <dt>Opened</dt><dd>July 3, 1993, per the owner in a 2015 comment on The Dial</dd>
+        <dt>Family</dt><dd>Opened by Carol Marshall and her husband, per BXV (2020). Her son Troy was managing it at that time.</dd>
+        <dt>Photos</dt><dd>Four photos from a reader's visit, below</dd>
+      </dl>
+    </div>
+
+    <h2>The shop</h2>
+    <p>Per BXV (2020), Carol Marshall started the shop after seeing a TV segment on the move toward fresh-roasted coffee, and several relatives have worked there over the years. A Bronxville business directory calls it the first coffee house in Westchester County, which we haven't been able to confirm independently.</p>
+
+    <h2>The coffee</h2>
+    <p>BXV (2020) reports 68 coffee varieties and a house blend of Sumatra and Colombian beans. A 2015 review in The Dial counted eight serve-yourself brewed coffees, plus lattes, hot chocolate, and tea, and described the shop as a place with plenty of tables for studying or working. A Sarah Lawrence student paper (undated) says it sells fresh beans to take home. None of the sources we found says the shop roasts its own coffee, so we list it as a coffee shop that sells beans, not as a roaster.</p>
+
+    <h2>Photos from a reader's visit</h2>
+    <p>Jeff, a Bronxville reader, sent these four photos from a visit in October 2026. They show what the camera caught, not a review, and they are not from a visit by Glenn.</p>
+
+    <figure class="photo">
+      <img src="/assets/slave-to-the-grind/board.webp" width="900" height="695" alt="A cork community bulletin board crowded with flyers for concerts, classes, a festival and rentals, with a vintage Golden Era Coffee sign on the wall to its left and a small sign reading Yes, we have Wifi below.">
+      <figcaption>The community bulletin board inside, a hand-lettered sign saying it is cleaned every month. Photo by Jeff.</figcaption>
+    </figure>
+
+    <div class="photo-grid">
+      <figure class="photo">
+        <img src="/assets/slave-to-the-grind/counter.webp" width="900" height="1212" alt="A black chalkboard wall above the counter, with hand-drawn Slave to the Grind lettering, a bean price list, an espresso menu and a drinks menu, over two grinders and a La Cimbali espresso machine, under a pressed-tin ceiling.">
+        <figcaption>The chalkboard wall above the espresso counter, under a pressed-tin ceiling. The board is marked "Est. 1993." Photo by Jeff.</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="/assets/slave-to-the-grind/window.webp" width="900" height="1006" alt="A laptop and an iced coffee on a granite table in front of a tall wood-framed window, with parked cars and autumn trees on the street outside.">
+        <figcaption>A window table, with the street and autumn trees outside. Photo by Jeff.</figcaption>
+      </figure>
+    </div>
+
+    <h2>A reader's tip</h2>
+    <p>Jeff, a Bronxville reader who told us he has no connection to the business, suggested Slave to the Grind as a neighborhood spot with a long list of coffees and a loyal crowd of regulars. His tip also made several claims that we couldn't confirm from published sources, so they are not repeated here.</p>
+"""
+STG+=_note("This profile is researched from published sources, with four photos from a reader's visit. It is not from a visit by Glenn. Hours and menus change, so check before you go. We could not review the business's own site or Instagram, so details from the shop itself are unconfirmed.",[("BXV, Stronger Together (2020)","https://www.myhometownbronxville.com/shopping/6538-spotlight-on-slave-to-the-grind-maison-rouge-continental-109-salon"),("The Dial (2015)","https://hsdial.org/2015/12/17/the-dial-reviews-neighborhood-coffee-shops/"),("Sarah Lawrence Phoenix","https://sarahlawrencephoenix.com/arts-and-culture/2014/10/16/awne0imh54cjg5aphlc9bhx5qo70k1")])
+place("coffee-shops","slave-to-the-grind","Slave to the Grind in Bronxville, New York","Slave to the Grind is a family-run coffee shop on Pondfield Road in Bronxville, New York, open since 1993. Address, what the sources say, and reader photos.","A family-run Bronxville coffee shop on Pondfield Road, open since 1993.",STG,"Coffee shop, Bronxville, New York, October 2026","shops")
+EXTRA_S.append(("slave-to-the-grind","Bronxville, New York","Slave to the Grind","A family-run Bronxville coffee shop on Pondfield Road, open since 1993."))
