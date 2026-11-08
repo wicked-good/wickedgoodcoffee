@@ -1036,3 +1036,77 @@ STG = """
 STG+=_note("This profile is researched from published sources, not from a visit. Hours and menus change, so check before you go. We could not review the business's own site or Instagram, so details from the shop itself are unconfirmed.",[("BXV, Stronger Together (2020)","https://www.myhometownbronxville.com/shopping/6538-spotlight-on-slave-to-the-grind-maison-rouge-continental-109-salon"),("The Dial (2015)","https://hsdial.org/2015/12/17/the-dial-reviews-neighborhood-coffee-shops/"),("Sarah Lawrence Phoenix","https://sarahlawrencephoenix.com/arts-and-culture/2014/10/16/awne0imh54cjg5aphlc9bhx5qo70k1")])
 place("coffee-shops","slave-to-the-grind","Slave to the Grind in Bronxville, New York","Slave to the Grind is a family-run coffee shop on Pondfield Road in Bronxville, New York, open since 1993. Address, what the sources say, and reader photos.","A family-run Bronxville coffee shop on Pondfield Road, open since 1993.",STG,"Coffee shop, Bronxville, New York, October 2026","shops")
 EXTRA_S.append(("slave-to-the-grind","Bronxville, New York","Slave to the Grind","A family-run Bronxville coffee shop on Pondfield Road, open since 1993."))
+
+PUBDATE="2026-11-08"
+
+# ---------------- GREISER'S ----------------
+# From Glenn's visit on November 8, 2026. Facts about the business history
+# are from Easton Courier (2019) and the shop's own apron, door and signage.
+GR = """
+    <figure class="photo">
+      <img src="/assets/greisers/storefront.webp" width="1200" height="1600" alt="A storefront with a long hand-painted sign reading 'Coffee &amp; Market, Easton Conn., GREISER'S, Est. 1926,' above a tall window with marble bistro tables and chairs set outside, a vintage red gas pump on the right.">
+      <figcaption>Greiser's Coffee &amp; Market, 299 Center Road, Easton, Connecticut. Photo by Glenn, November 8, 2026.</figcaption>
+    </figure>
+
+    <p>Greiser's sits at the corner of Center and Westport roads in Easton, Connecticut, in a building that has been selling coffee, gasoline and sundries to the town since 1926. An apron on a mannequin inside calls it, with care, "Arguably America's Oldest Coffeehouse." It just celebrated 100 years.</p>
+
+    <div class="recipe">
+      <h2>The short version</h2>
+      <dl>
+        <dt>Where</dt><dd>299 Center Road, Easton, CT 06612, on the corner of Center and Westport</dd>
+        <dt>Phone</dt><dd>(203) 220-9424</dd>
+        <dt>Hours</dt><dd>Monday to Friday 7am to 5pm, Saturday and Sunday 7am to 3pm, as posted on the door in November 2026</dd>
+        <dt>Est.</dt><dd>1926, as the Greiser family store. The specialty coffee shop, Greiser's Coffee &amp; Market, opened November 2018.</dd>
+        <dt>Tagline</dt><dd>"Arguably America's Oldest Coffeehouse"</dd>
+        <dt>Coffee</dt><dd>Served from La Colombe, not roasted on site</dd>
+        <dt>Also on site</dt><dd>A general store with antiques and local goods, and a vintage gas pump (currently closed per a note on the door)</dd>
+      </dl>
+    </div>
+
+    <h2>The story</h2>
+    <p>Per Easton Courier (2019), Arthur Richard Greiser immigrated from Germany to Easton in 1900 and bought the store in 1926. Locals called the place "Town Hall West." His son Dick Greiser later ran it as Greiser Market &amp; Deli for 42 years, continuously, selling sandwiches, sundries, gasoline and antiques. The family ran it for 92 years in total.</p>
+    <p>In November 2018, Adrienne Burke took over the coffee side on a lease from Dick Greiser and reopened the business as Greiser's Coffee &amp; Market. Dick Greiser kept the antiques and the gas station. The coffee operation turned one in 2019 and, in the same building, turned 100 as a continuous Easton coffee destination in 2026.</p>
+
+    <figure class="photo">
+      <img src="/assets/greisers/apron.webp" width="1050" height="1400" alt="A mannequin wearing a black T-shirt reading 'Arguably America's Oldest Coffeehouse, Easton, Conn.' with a white apron, in front of shelves of maple syrup, hot sauces and pottery.">
+      <figcaption>The apron on the mannequin in the market, with the shop's careful "Arguably" out front.</figcaption>
+    </figure>
+
+    <h2>What's on</h2>
+    <p>Coffee is poured from La Colombe. The espresso menu goes from a $3.50 espresso up to a mocha latte in three sizes, with a cortado, flat white, cappuccino, Americano and macchiato in between. A matcha latte, chai, and hot chocolate round out the drink list. The seasonal panel, the day Glenn visited, carried a minty mocha, a gingerbread-cookie latte and a cinnamon-roll latte. Hot cider is back on. A separate panel lists what the shop calls its "unseasonal lattes," which are rose, strawberry and lavender.</p>
+
+    <figure class="photo">
+      <img src="/assets/greisers/menu.webp" width="1200" height="1600" alt="A chalkboard menu above the counter with coffee and espresso prices on the left, sandwiches and panini in the middle and baked goods on the right, next to a dark-blue pendant lamp and a FETCO batch brewer.">
+      <figcaption>The main menu board. Prices are small, portions are not.</figcaption>
+    </figure>
+
+    <p>The kitchen side is where regulars will tell you to pay attention. The sandwich list runs to the Greis-n-Shine panini, a sausage, egg and cheese on an English muffin, a Brie &amp; Fig panini, a pickle melt, a brunch burrito and the Groove Cheeseburger. Baked goods include scones, cinnamon buns, savory pastries, a chocolate-chip twist and a daily soup, with gluten-free and vegan options named on the board.</p>
+
+    <h2>What Glenn thought</h2>
+    <p>Ambiance is the thing here. The coffee operation is a counter at the front of what is still, honestly, a country general store: pressed-tin ceilings, pendant lamps on a pole, antique tables, the mannequin, shelves of pottery and syrup and pickles and lamps. People walk in from the patio where two marble café tables sit between the old gas pumps, and then stay longer than they planned to. Locals pointed out the food as the quiet surprise. The sandwiches and pastries are a bigger reason to stop than the La Colombe pour, which is the kind of thing a visitor doesn't expect from a corner store that is also a gas station that is also a coffee shop.</p>
+
+    <figure class="photo">
+      <img src="/assets/greisers/interior.webp" width="1050" height="1400" alt="Inside Greiser's: a weathered wood table with a stone pot of dried corn husks in the foreground, antique cabinets, a stag-handled bucket, blue pendant lamps and the apron-wearing mannequin behind the counter in the background.">
+      <figcaption>The general-store side, looking toward the counter.</figcaption>
+    </figure>
+
+    <h2>Before you go</h2>
+    <p>The gas station is <strong>temporarily closed</strong>, per a handwritten note on the front door. Don't plan on filling up here. Everything else is open to business.</p>
+
+    <div class="photo-grid">
+      <figure class="photo">
+        <img src="/assets/greisers/oval-sign.webp" width="900" height="1200" alt="An oval blue sign reading 'GREISER'S Coffee &amp; Market, Est. 1926,' hung on a mustard-yellow painted wood siding wall next to a blue door and a 'Christmas Tree Capital of Connecticut, Easton' framed sign.">
+        <figcaption>One of the two blue signs. Easton is the Christmas Tree Capital of Connecticut.</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="/assets/greisers/door.webp" width="900" height="1200" alt="A blue wood door with a 'Coffee by La Colombe Coffee Roasters' sticker, an oval Greiser's Coffee &amp; Market sticker with a hummingbird, and a hand-written sign reading 'HI! Gas Station is temporarily CLOSED. Sorry for the inconvenience. -Greisers.'">
+        <figcaption>The door, with the La Colombe sticker, the Greiser's hummingbird, and the gas-station notice.</figcaption>
+      </figure>
+    </div>
+
+    <h2>Where to start</h2>
+    <p>Order a latte and a Brie &amp; Fig panini, or whatever the sandwich board is talking up that morning. Sit at a marble table on the patio if the weather allows it. Walk the market on your way out. Then come back for the next season of lattes.</p>
+"""
+GR+=_note("This profile is based on Glenn's visit to Greiser's on November 8, 2026. Prices, menu items and the apron tagline are from photos taken on the same visit. The history is from Easton Courier's reporting, and hours, address and phone are as posted on the shop's door and verified against Connecticut's tourism directory.",[("Greiser's listing at ctvisit.com","https://ctvisit.com/listings/greisers-coffee-market"),("Easton Courier, First-anniversary report (November 2019)","https://eastoncourier.news/2019/11/21/greisers-coffee-market-celebrates-first-anniversary/"),("Easton Courier, Cooking up cozy with Greisers (January 2021)","https://eastoncourier.news/2021/01/18/cooking-up-cozy-with-greisers/"),("the shop on Instagram","https://www.instagram.com/greisers.coffee/")])
+place("coffee-shops","greisers","Greiser's Coffee & Market, 100 years on the corner in Easton, Connecticut","Greiser's Coffee & Market in Easton, Connecticut has been selling coffee on the same corner since 1926. A visit, the story, the menu, and where to start.","A 100-year-old general store, coffee shop, and gas station in Easton, Connecticut.",GR,"Coffee shop, Easton, Connecticut, November 2026","shops")
+EXTRA_S.append(("greisers","Easton, Connecticut","Greiser's Coffee & Market","A 100-year-old general store, coffee shop and vintage gas station in Easton, Connecticut."))
