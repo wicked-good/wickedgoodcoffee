@@ -16,6 +16,7 @@ HERO_ALT={
  "subculture-coffee":"A white Subculture Coffee Roasters espresso cup with a red rim, on a matching saucer with a spoon, on a dark table in a busy cafe.",
  "subculture-delray":"The Subculture Coffee shop in Delray Beach, a low building painted in bold geometric shapes, with palm trees out front and 302 above the door.",
  "slave-to-the-grind":"The green awning of Slave to the Grind in Bronxville, with gold old-English lettering, and people at small sidewalk tables under autumn trees.",
+ "greisers":"The hand-painted Coffee & Market sign at Greiser's in Easton, Connecticut, above a storefront with marble cafe tables and a vintage red gas pump.",
  "french-press":"A chrome-collared Bodum Original french press on a marble counter, grounds steeping inside the glass.",
  "moka-pot":"A stainless steel Bialetti moka pot sitting on a glass-top electric stove.",
 }
@@ -686,7 +687,7 @@ TIPS=[
  ("Percolator","percolator","Use about 10 g (0.35 oz) of coarse coffee per 240 g (8 fl oz) of water, and turn the heat to low once it starts perking."),
  ("Grind size","grind-size","If a cup tastes sour or thin, grind finer. If it tastes bitter or harsh, grind coarser. Change one thing at a time."),
 ]
-FEATURED="slave-to-the-grind"
+FEATURED="greisers"
 def build_home():
     rows={}
     for sl,m,t,b in EXTRA_R+EXTRA_S:
