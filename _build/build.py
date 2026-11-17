@@ -15,6 +15,7 @@ HERO_ALT={
  "brio-coffeeworks":"The red metal building and glass garage door of Brio Coffeeworks in Burlington.",
  "subculture-coffee":"A white Subculture Coffee Roasters espresso cup with a red rim, on a matching saucer with a spoon, on a dark table in a busy cafe.",
  "subculture-delray":"The Subculture Coffee shop in Delray Beach, a low building painted in bold geometric shapes, with palm trees out front and 302 above the door.",
+ "subculture-jupiter":"The Harbourside Place directory sign in Jupiter, Florida, listing Subculture Coffee Roasters alongside Tommy Bahama, The Jupiter Grill and Sand by Lola Dre, with palm trees in the background.",
  "slave-to-the-grind":"The green awning of Slave to the Grind in Bronxville, with gold old-English lettering, and people at small sidewalk tables under autumn trees.",
  "greisers":"The hand-painted Coffee & Market sign at Greiser's in Easton, Connecticut, above a storefront with marble cafe tables and a vintage red gas pump.",
  "french-press":"A chrome-collared Bodum Original french press on a marble counter, grounds steeping inside the glass.",
@@ -197,11 +198,15 @@ PLACES = {
   ]},
   "subculture-coffee": {"name":"Subculture Coffee Roasters", "visitable":True, "addr":[
     {"label":"West Palm Beach, Clematis Street", "street":"509 Clematis Street", "city":"West Palm Beach", "region":"FL", "postal":"33401"},
-    {"label":"Delray Beach, NE 6th Avenue", "street":"302 NE 6th Avenue", "city":"Delray Beach", "region":"FL", "postal":"33444"}
+    {"label":"Delray Beach, NE 6th Avenue", "street":"302 NE 6th Avenue", "city":"Delray Beach", "region":"FL", "postal":"33444"},
+    {"label":"Jupiter, Harbourside Place", "street":"107 Front Street", "city":"Jupiter", "region":"FL", "postal":"33477"}
   ]},
   # cafés
   "subculture-delray": {"name":"Subculture Coffee, Delray Beach", "visitable":True, "addr":[
     {"label":"Delray Beach shop", "street":"302 NE 6th Avenue", "city":"Delray Beach", "region":"FL", "postal":"33444"}
+  ]},
+  "subculture-jupiter": {"name":"Subculture Coffee, Jupiter", "visitable":True, "addr":[
+    {"label":"Harbourside Place", "street":"107 Front Street", "city":"Jupiter", "region":"FL", "postal":"33477"}
   ]},
   "slave-to-the-grind": {"name":"Slave to the Grind", "visitable":True, "addr":[
     {"label":"Coffee shop on Pondfield Road", "street":"58 Pondfield Road", "city":"Bronxville", "region":"NY", "postal":"10708"}

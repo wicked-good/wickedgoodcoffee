@@ -1110,3 +1110,81 @@ GR = """
 GR+=_note("This profile is based on Glenn's visit to Greiser's on November 8, 2026. Prices, menu items and the apron tagline are from photos taken on the same visit. The history is from Easton Courier's reporting, and hours, address and phone are as posted on the shop's door and verified against Connecticut's tourism directory.",[("Greiser's listing at ctvisit.com","https://ctvisit.com/listings/greisers-coffee-market"),("Easton Courier, First-anniversary report (November 2019)","https://eastoncourier.news/2019/11/21/greisers-coffee-market-celebrates-first-anniversary/"),("Easton Courier, Cooking up cozy with Greisers (January 2021)","https://eastoncourier.news/2021/01/18/cooking-up-cozy-with-greisers/"),("the shop on Instagram","https://www.instagram.com/greisers.coffee/")])
 place("coffee-shops","greisers","Greiser's Coffee & Market, 100 years on the corner in Easton, Connecticut","Greiser's Coffee & Market in Easton, Connecticut has been selling coffee on the same corner since 1926. A visit, the story, the menu, and where to start.","A 100-year-old general store, coffee shop, and gas station in Easton, Connecticut.",GR,"Coffee shop, Easton, Connecticut, November 2026","shops")
 EXTRA_S.append(("greisers","Easton, Connecticut","Greiser's Coffee & Market","A 100-year-old general store, coffee shop and vintage gas station in Easton, Connecticut."))
+
+PUBDATE="2026-11-17"
+
+# ---------------- SUBCULTURE JUPITER ----------------
+# From Glenn's visit on November 17, 2026. His note: each Subculture has
+# its own character. This one is a roasting cafe inside the Harbourside
+# Place waterfront development in Jupiter, Florida.
+SJ = """
+    <figure class="photo">
+      <img src="/assets/subculture-jupiter/harbourside-sign.webp" width="768" height="1024" alt="A stylized wedge-shaped directory sign reading HARBOURSIDE down one side, with panels for Tommy Bahama, SUBCULTURE COFFEE ROASTERS, The Jupiter Grill and Sand by Lola Dre, palm trees and a cloudy sky in the background.">
+      <figcaption>Subculture Coffee Roasters at Harbourside Place, Jupiter, Florida. Photo by Glenn, November 17, 2026.</figcaption>
+    </figure>
+
+    <p>This is the third Subculture Coffee Roasters shop that has landed on this site, after the <a href="/roasters/subculture-coffee/">original on Clematis Street in West Palm Beach</a> and the <a href="/coffee-shops/subculture-delray/">Delray Beach shop</a>. The Jupiter location sits inside Harbourside Place, a waterfront mixed-use development on the Intracoastal, next to Tommy Bahama and The Jupiter Grill. It roasts on site.</p>
+
+    <div class="recipe">
+      <h2>The short version</h2>
+      <dl>
+        <dt>Where</dt><dd>107 Front Street, Jupiter, FL 33477, in Harbourside Place</dd>
+        <dt>Hours</dt><dd>Sunday to Thursday 7am to 8pm, Wednesday open to 9pm for trivia night, Friday and Saturday 7am to 10pm, per the shop's Harbourside Place listing</dd>
+        <dt>What's on</dt><dd>Hot and iced espresso drinks, drip, slow pour, French press, flavored lattes, cold brew, affogato</dd>
+        <dt>Kitchen</dt><dd>Avocado toast, acai bowls, smoothies, house-made quiche, empanadas, breakfast burritos, bacon-and-egg and ham-and-swiss croissants</dd>
+        <dt>Equipment</dt><dd>La Marzocco espresso machine, Tri-Mist drum roaster in magenta, on the floor behind the counter</dd>
+        <dt>Coffee</dt><dd>Subculture's own, roasted here in small batches</dd>
+      </dl>
+    </div>
+
+    <h2>Each Subculture is different</h2>
+    <p>Three shops in now and the pattern is clear: Subculture leans into the character of each room, rather than stamping one template across the group. Clematis Street in West Palm Beach is the roastery flagship. Delray Beach is a low geometric block of color with palm trees out front and 302 above the door. The Jupiter shop is a waterfront room full of eclectic furniture and hand-drawn murals, with the roaster right there on the floor.</p>
+
+    <figure class="photo">
+      <img src="/assets/subculture-jupiter/doors.webp" width="768" height="1024" alt="Two glass doors with the SUBCULTURE COFFEE ROASTERS logo etched in color blocks, the 107 street number on one door, and window art of hot-air balloons, light bulbs and gears.">
+      <figcaption>The front doors at 107 Front Street, with the Subculture color-block logo and window art of balloons and bulbs.</figcaption>
+    </figure>
+
+    <h2>The room</h2>
+    <p>White subway tile floor to ceiling. A burgundy ceiling, lit by track lights and the odd pendant. The espresso counter is a La Marzocco in matte white, stickered along the top with a row of tiny pixel-art creatures. Behind the counter, five hand-illustrated menu boards cover hot, iced, breakfast, flavored lattes, and a flat-out trippy "Try Us Or Report Us" board with a cartoon spaceman. On the wall opposite, a full mural of steampunk coffee drawings: skulls with cameras, a zeppelin, a rocket, a grinder, a cup. Signed CPG.</p>
+
+    <figure class="photo">
+      <img src="/assets/subculture-jupiter/menu.webp" width="768" height="1024" alt="Behind-the-counter wall with five hand-illustrated menu panels (Try Us or Report Us, Hot, Iced, Breakfast, flavored latte and a cartoon spaceman) over white subway tile, with a La Marzocco espresso machine, grinders and the day's Drink of the Week chalkboard below.">
+      <figcaption>The menu boards, each hand-drawn.</figcaption>
+    </figure>
+
+    <p>Seating is mixed on purpose: brown leather egg chairs around a small marble bistro table on the floor, booths along the mural wall, bar seating at the window. An embossed-tin counter column stands in front of a floor-to-ceiling wallpaper of black-and-white mid-century celebrity photos.</p>
+
+    <div class="photo-grid">
+      <figure class="photo">
+        <img src="/assets/subculture-jupiter/la-marzocco.webp" width="768" height="1024" alt="Close-up of a white La Marzocco espresso machine, with a tray of Subculture-branded espresso cups on top and a Free Dog Treats tin on the marble counter below.">
+        <figcaption>The La Marzocco, with a stack of branded cups and the dog-treat tin.</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="/assets/subculture-jupiter/egg-chairs.webp" width="768" height="1024" alt="Two brown leather egg chairs with chrome tulip bases around a small round marble bistro table, in front of an embossed-tin column covered in a wallpaper of black-and-white celebrity photos, with the magenta roaster visible in the background.">
+        <figcaption>Egg chairs, a marble bistro top, and the magenta roaster in the background.</figcaption>
+      </figure>
+    </div>
+
+    <h2>The roaster on the floor</h2>
+    <p>The thing you walk around to see is the Tri-Mist drum roaster in magenta, sitting on an open platform inside the cafe itself, against a wall of mid-century black-and-white photos. On the day Glenn visited, a plush pink octopus was draped over the drum. Inside the hopper was a pile of small plush animals. A sign on the wall behind read COFFEE, and a small chalk sketch of a stressed coffee bean on a cup.</p>
+
+    <figure class="photo">
+      <img src="/assets/subculture-jupiter/roaster.webp" width="768" height="1024" alt="A magenta Tri-Mist drum coffee roaster on an open platform, with a large plush pink octopus draped over the drum, a pile of small plush animals in the hopper, and a wall of black-and-white mid-century celebrity photos behind.">
+      <figcaption>The Tri-Mist drum roaster, with its pink octopus, on the floor at the back of the cafe.</figcaption>
+    </figure>
+
+    <h2>Something was happening</h2>
+    <p>On the day Glenn visited, the shop was also staging a silent auction of framed celebrity memorabilia (Taylor Swift, Johnny Cash, a "Man in the Arena" plaque) benefiting Families First of Palm Beach County. The kind of event that, from the outside, does not look like a coffee shop thing to be doing. The kind of event that, in Subculture's rooms, fits.</p>
+
+    <figure class="photo">
+      <img src="/assets/subculture-jupiter/silent-auction.webp" width="768" height="1024" alt="A silent-auction table with a Families First of Palm Beach County poster, framed celebrity memorabilia including Taylor Swift and Johnny Cash prints and a 'Man in the Arena' plaque, bid sheets in front, and a visitor in a brown eyelet top scanning the display.">
+      <figcaption>The silent auction for Families First of Palm Beach County, up along the photo wall.</figcaption>
+    </figure>
+
+    <h2>Where to start</h2>
+    <p>Order the drink of the week off the small chalkboard next to the espresso machine, or a slow pour if the counter isn't swamped. Add an empanada or a breakfast sandwich. Pick the seat that fits the mood: window bar, booth under the mural, egg chairs by the roaster. Then wander the room.</p>
+"""
+SJ+=_note("This profile is based on Glenn's visit to Subculture Coffee at Harbourside Place on November 17, 2026. Menu items, equipment and the silent-auction event are from photos taken on the same visit. Address and hours are as posted on the shop's listing at Harbourside Place. See also the Subculture roaster profile and the Delray shop profile, both linked above.",[("Subculture at Harbourside Place","https://harboursideplace.com/subculture-coffee/"),("Subculture Coffee","https://www.subculturecoffee.com/")])
+place("coffee-shops","subculture-jupiter","Subculture Coffee at Harbourside Place in Jupiter, Florida","The Jupiter location of Subculture Coffee Roasters sits in the Harbourside Place waterfront development and roasts on site. A visit, the room, the roaster, and where to start.","A waterfront Subculture Coffee shop in Jupiter, Florida, with hand-drawn murals, egg chairs, and a magenta drum roaster on the floor.",SJ,"Coffee shop, Jupiter, Florida, November 2026","shops")
+EXTRA_S.append(("subculture-jupiter","Jupiter, Florida","Subculture Coffee at Harbourside","A waterfront Subculture shop at Harbourside Place in Jupiter, with a magenta drum roaster on the floor."))
