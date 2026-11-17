@@ -1116,14 +1116,14 @@ PUBDATE="2026-11-17"
 # ---------------- SUBCULTURE JUPITER ----------------
 # From Glenn's visit on November 17, 2026. His note: each Subculture has
 # its own character. This one is a roasting cafe inside the Harbourside
-# Place waterfront development in Jupiter, Florida.
+# Place development in Jupiter, Florida.
 SJ = """
     <figure class="photo">
       <img src="/assets/subculture-jupiter/harbourside-sign.webp" width="768" height="1024" alt="A stylized wedge-shaped directory sign reading HARBOURSIDE down one side, with panels for Tommy Bahama, SUBCULTURE COFFEE ROASTERS, The Jupiter Grill and Sand by Lola Dre, palm trees and a cloudy sky in the background.">
       <figcaption>Subculture Coffee Roasters at Harbourside Place, Jupiter, Florida. Photo by Glenn, November 17, 2026.</figcaption>
     </figure>
 
-    <p>This is the third Subculture Coffee Roasters shop that has landed on this site, after the <a href="/roasters/subculture-coffee/">original on Clematis Street in West Palm Beach</a> and the <a href="/coffee-shops/subculture-delray/">Delray Beach shop</a>. The Jupiter location sits inside Harbourside Place, a waterfront mixed-use development on the Intracoastal, next to Tommy Bahama and The Jupiter Grill. It roasts on site.</p>
+    <p>This is the third Subculture Coffee Roasters shop that has landed on this site, after the <a href="/roasters/subculture-coffee/">original on Clematis Street in West Palm Beach</a> and the <a href="/coffee-shops/subculture-delray/">Delray Beach shop</a>. The Jupiter location sits inside Harbourside Place, a mixed-use development next to Tommy Bahama and The Jupiter Grill. It roasts on site.</p>
 
     <div class="recipe">
       <h2>The short version</h2>
@@ -1138,7 +1138,7 @@ SJ = """
     </div>
 
     <h2>Each Subculture is different</h2>
-    <p>Three shops in now and the pattern is clear: Subculture leans into the character of each room, rather than stamping one template across the group. Clematis Street in West Palm Beach is the roastery flagship. Delray Beach is a low geometric block of color with palm trees out front and 302 above the door. The Jupiter shop is a waterfront room full of eclectic furniture and hand-drawn murals, with the roaster right there on the floor.</p>
+    <p>Three shops in now and the pattern is clear: Subculture leans into the character of each room, rather than stamping one template across the group. Clematis Street in West Palm Beach is the roastery flagship. Delray Beach is a low geometric block of color with palm trees out front and 302 above the door. The Jupiter shop is a room full of eclectic furniture and hand-drawn murals, with the roaster right there on the floor.</p>
 
     <figure class="photo">
       <img src="/assets/subculture-jupiter/doors.webp" width="768" height="1024" alt="Two glass doors with the SUBCULTURE COFFEE ROASTERS logo etched in color blocks, the 107 street number on one door, and window art of hot-air balloons, light bulbs and gears.">
@@ -1186,5 +1186,5 @@ SJ = """
     <p>Order the drink of the week off the small chalkboard next to the espresso machine, or a slow pour if the counter isn't swamped. Add an empanada or a breakfast sandwich. Pick the seat that fits the mood: window bar, booth under the mural, egg chairs by the roaster. Then wander the room.</p>
 """
 SJ+=_note("This profile is based on Glenn's visit to Subculture Coffee at Harbourside Place on November 17, 2026. Menu items, equipment and the silent-auction event are from photos taken on the same visit. Address and hours are as posted on the shop's listing at Harbourside Place. See also the Subculture roaster profile and the Delray shop profile, both linked above.",[("Subculture at Harbourside Place","https://harboursideplace.com/subculture-coffee/"),("Subculture Coffee","https://www.subculturecoffee.com/")])
-place("coffee-shops","subculture-jupiter","Subculture Coffee at Harbourside Place in Jupiter, Florida","The Jupiter location of Subculture Coffee Roasters sits in the Harbourside Place waterfront development and roasts on site. A visit, the room, the roaster, and where to start.","A waterfront Subculture Coffee shop in Jupiter, Florida, with hand-drawn murals, egg chairs, and a magenta drum roaster on the floor.",SJ,"Coffee shop, Jupiter, Florida, November 2026","shops")
-EXTRA_S.append(("subculture-jupiter","Jupiter, Florida","Subculture Coffee at Harbourside","A waterfront Subculture shop at Harbourside Place in Jupiter, with a magenta drum roaster on the floor."))
+place("coffee-shops","subculture-jupiter","Subculture Coffee at Harbourside Place in Jupiter, Florida","The Jupiter location of Subculture Coffee Roasters sits in the Harbourside Place development and roasts on site. A visit, the room, the roaster, and where to start.","A Subculture Coffee shop in Jupiter, Florida, with hand-drawn murals, egg chairs, and a magenta drum roaster on the floor.",SJ,"Coffee shop, Jupiter, Florida, November 2026","shops")
+EXTRA_S.append(("subculture-jupiter","Jupiter, Florida","Subculture Coffee at Harbourside","A Subculture shop at Harbourside Place in Jupiter, with a magenta drum roaster on the floor."))
